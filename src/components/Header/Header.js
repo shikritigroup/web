@@ -65,7 +65,7 @@ function Header() {
                             >
                                 {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Link to={"/" + page} className='menu-item'>{page}</Link>
+                                        <Link to={"web/" + page} className='menu-item'>{page}</Link>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -73,18 +73,18 @@ function Header() {
 
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '150px' } }}>
-                            <Link to="/" className='menu-title' >
+                            <Link to="/web" className='menu-title' >
                                 Shikriti
                             </Link>
                         </Box>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="menu-item-container">
                             {pages.map((page) => (
-                                <Link className='menu-item' to={"/" + page}>{page}</Link>
+                                <Link className='menu-item' to={"web/" + page}>{page}</Link>
                             ))}
                         </Box>
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Cart">
-                                <Typography component="a" href='Cart'                                >
+                                <Typography component="a" href='/web/Cart'                                >
                                     <ShoppingCartIcon sx={{ my: 2, color: 'black', display: 'block' }}></ShoppingCartIcon>
                                 </Typography>
                             </Tooltip>

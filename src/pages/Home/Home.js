@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function Home() {
-  const incenses = ['/web/images/Incense1.jpg', '/web/images/Incense2.jpg'];
-  const spices = ['/web/images/Spices1.jpg', '/web/images/Spices2.jpg'];
+  const incenses = ['/images/Incense1.jpg', '/images/Incense2.jpg'];
+  const spices = ['/images/Spices1.jpg', '/images/Spices2.jpg'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,7 +27,7 @@ export default function Home() {
               style={{ transformOrigin: '0 0 0', timeout: 1000 }}
             >
               <Box className="explore-container">
-                <img src="/web/images/b2b.jpg" height="92px" width="100%" />
+                <img alt="b2b" src="/web/images/b2b.jpg" height="92px" width="100%" />
                 <ButtonExplore link="b2b" text="Contact Us" type="secondary" />
               </Box>
             </Grow>
@@ -46,13 +46,13 @@ function AppCarousel({ list, height, link, t1 = '', t2 = '', t3 = '', t4 = '' })
     >
       <Box className="explore-container">
         <Carousel showArrows={false} autoPlay={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
-          {list.map((item, index) => <img key={'carousel_item_' + index} src={item} height={height} />)}
+          {list.map((item, index) => <img alt={item} key={'carousel_item_' + index} src={'web/' + item} height={height} />)}
         </Carousel>
         <ButtonExplore link={link} text="Explore Products" />
         <Box className="details-texts">
           <Typography variant="h3">{t1}</Typography>
-          <Typography variant="h3">{t2}</Typography>
-          <Typography variant="h4">{t3}</Typography>
+          <Typography variant="h4">{t2}</Typography>
+          <Typography variant="h5">{t3}</Typography>
           <Typography variant="h6">{t4}</Typography>
         </Box>
       </Box>

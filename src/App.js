@@ -30,18 +30,18 @@ function App() {
       <ThemeProvider theme={appTheme}>
         <CssBaseline />
         <Header></Header>
-        <div className='bg-white'>
+        <div className='bg-white container'>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="terms" element={<Terms />} />
-            <Route path="signUP" element={<SignUP />} />
-            <Route path="incense" element={<Incense />} />
-            <Route path="spices" element={<Spices />} />
-            <Route path="b2b" element={<B2B />} />
+            <Route path="web" element={<Home />} />
+            <Route path="web/about" element={<About />} />
+            <Route path="web/contact" element={<Contact />} />
+            <Route path="web/cart" element={<Cart />} />
+            <Route path="web/checkout" element={<Checkout />} />
+            <Route path="web/terms" element={<Terms />} />
+            <Route path="web/signUP" element={<SignUP />} />
+            <Route path="web/incense" element={<Incense />} />
+            <Route path="web/spices" element={<Spices />} />
+            <Route path="web/b2b" element={<B2B />} />
             <Route path="*" element={<div><h1>404 Not Found</h1></div>} />
           </Routes>
         </div>
