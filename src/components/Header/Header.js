@@ -73,7 +73,7 @@ function Header() {
 
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '150px' } }}>
-                            <Link to="web" className='menu-title' >
+                            <Link to="/" className='menu-title' >
                                 Shikriti
                             </Link>
                         </Box>
