@@ -1,0 +1,38 @@
+.explore-container {
+    position: relative;
+}
+
+.btn-explore-primary {
+    background-color: #0f766e;
+    color: #fff;
+}
+
+.btn-explore-secondary {
+    background-color: #fff;
+    color: #0f766e;
+}
+
+.btn-explore {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    display: flex;
+}
+
+.details-texts {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.details-texts h3,
+h4,
+h6 {
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: left;
+}

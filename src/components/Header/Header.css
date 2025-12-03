@@ -1,0 +1,34 @@
+.menu-item-container {
+    justify-content: center;
+}
+
+.menu-item {
+    width: 80px;
+    height: 25px;
+    font-size: 18px;
+    font-family: 'monospace';
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+    transform: scale(1.1);
+    text-align: center;
+}
+
+.menu-item:hover {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.menu-title {
+    font-family: 'monospace';
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: .3rem;
+    color: inherit;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.menu-title:hover {
+    font-size: 30px;
+}
