@@ -31,6 +31,7 @@ function Header() {
         <Slide
             in="true"
             {...{ timeout: 400 }}
+            transition={{ duration: 5000, delay: 0.1 }}
         >
             <AppBar position="static">
                 <Container maxWidth="xl">
@@ -72,7 +73,7 @@ function Header() {
 
                         {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                         <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '150px' } }}>
-                            <Link to="/" className='menu-title' >
+                            <Link to="web" className='menu-title' >
                                 Shikriti
                             </Link>
                         </Box>

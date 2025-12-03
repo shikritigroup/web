@@ -6,29 +6,28 @@ import { Link } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function Home() {
-  const incenses = ['images/Incense1.jpg', 'images/Incense2.jpg'];
-  const spices = ['images/Spices1.jpg', 'images/Spices2.jpg'];
-  const timeout = 1000;
+  const incenses = ['/web/images/Incense1.jpg', '/web/images/Incense2.jpg'];
+  const spices = ['/web/images/Spices1.jpg', '/web/images/Spices2.jpg'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container>
         <Grid size={{ lg: 7, sm: 6, xs: 12 }}>
           <Box sx={{ p: 1 }}>
-            <AppCarousel list={incenses} height="400px" timeout={timeout} link="incense" t1="Experience the" t2="Divine Fragrance" t4="Handcrafted incense sticks and authentic Indian masala powders made with traditional methods and premium natural ingredients by SHIKRITI GROUP." />
+            <AppCarousel list={incenses} height="400px" link="incense" t1="Experience the" t2="Divine Fragrance" t4="Handcrafted incense sticks and authentic Indian masala powders made with traditional methods and premium natural ingredients by SHIKRITI GROUP." />
           </Box>
         </Grid>
         <Grid size={{ lg: 5, sm: 6, xs: 12 }}>
           <Box sx={{ p: 1, pl: { md: 0, xs: 1 } }} xs={{ p: 1 }}>
-            <AppCarousel list={spices} height="300px" timeout={timeout} link="spices" t3="100% Natural & Pure by SHIKRITI GROUP" />
+            <AppCarousel list={spices} height="300px" link="spices" t3="100% Natural & Pure by SHIKRITI GROUP" />
           </Box>
           <Box sx={{ p: { md: 0, xs: 1 }, pr: 1 }} sm={{ p: 1 }}>
             <Grow
               in={true}
-              style={{ transformOrigin: '0 0 0', timeout: timeout }}
+              style={{ transformOrigin: '0 0 0', timeout: 1000 }}
             >
               <Box className="explore-container">
-                <img src="/images/b2b.jpg" height="92px" width="100%" />
+                <img src="/web/images/b2b.jpg" height="92px" width="100%" />
                 <ButtonExplore link="b2b" text="Contact Us" type="secondary" />
               </Box>
             </Grow>
@@ -39,11 +38,11 @@ export default function Home() {
   )
 }
 
-function AppCarousel({ list, height, timeout, link, t1 = '', t2 = '', t3 = '', t4 = '' }) {
+function AppCarousel({ list, height, link, t1 = '', t2 = '', t3 = '', t4 = '' }) {
   return (
     <Grow
       in={true}
-      style={{ transformOrigin: '0 0 0', timeout: timeout }}
+      style={{ transformOrigin: '0 0 0', timeout: 1000 }}
     >
       <Box className="explore-container">
         <Carousel showArrows={false} autoPlay={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
