@@ -1,0 +1,9 @@
+.btn-more {
+    display: flex;
+    margin: auto;
+    text-decoration: none;
+}
+
+.btn-more:hover {
+    text-decoration: underline;
+}

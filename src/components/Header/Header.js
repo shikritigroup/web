@@ -13,7 +13,7 @@ import Slide from '@mui/material/Slide';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const pages = ['Incense', 'Spices', 'About', 'Contact', 'Terms'];
+const pages = ['Incenses', 'Spices', 'About', 'Contact', 'Terms', 'B2B'];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);

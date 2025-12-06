@@ -25,8 +25,8 @@ export default function Home() {
       <Grid container>
         <Grid size={{ lg: 7, sm: 6, xs: 12 }}>
           <Box sx={{ p: 1 }}>
-            <AppCarousel name="incenses" list={lookups?.incenses} className="car-img-1" link="incense" exploretype="secondary" 
-            btnText="Explore Products"
+            <AppCarousel name="incenses" list={lookups?.incenses} className="car-img-1" link="incense" exploretype="secondary"
+              btnText="Explore Products"
               t1="Experience the" t2="Divine Fragrance" t4="Handcrafted incense sticks and authentic Indian masala powders made with traditional methods and premium natural ingredients by SHIKRITI GROUP." />
           </Box>
         </Grid>
@@ -40,15 +40,15 @@ export default function Home() {
               in={true}
               style={{ transformOrigin: '0 0 0', timeout: 1000 }}
             >
-              <Box className="explore-container">
-                <AppCarousel name="b2b" list={lookups?.b2bs} className="car-img-3" link="b2b" exploretype="secondary" btnText="Explore"/>
+              <Box className="explore-container" sx={{ pr: 1 }}>
+                <AppCarousel name="b2b" list={lookups?.b2bs} className="car-img-3" link="b2b" exploretype="secondary" btnText="Explore" />
               </Box>
             </Grow>
           </Box>
         </Grid>
       </Grid>
-      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses}></MostSales>
-      {/* <MostSales headerText="Last Month Best Sales Spices" items={lookups.bestSaleSpices}></MostSales> */}
+      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses} moreLink="/web/Incenses"></MostSales>
+      <MostSales headerText="Last Month Best Sales Spices" items={lookups?.bestSaleSpices} moreLink="/web/Spices"></MostSales>
     </Box >
   )
 }

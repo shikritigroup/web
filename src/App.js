@@ -1,12 +1,12 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 import Spices from './pages/Spices';
 import SignUP from './pages/SignUP';
 import Cart from './pages/Cart';
-import Incense from './pages/Incense';
+import Incenses from './pages/Incenses';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Terms from './pages/Terms';
@@ -14,6 +14,7 @@ import Checkout from './pages/Checkout';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import B2B from './pages/B2B/B2B';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 const appTheme = createTheme({
   palette: {
@@ -39,9 +40,10 @@ function App() {
             <Route path="web/checkout" element={<Checkout />} />
             <Route path="web/terms" element={<Terms />} />
             <Route path="web/signUP" element={<SignUP />} />
-            <Route path="web/incense" element={<Incense />} />
+            <Route path="web/Incenses" element={<Incenses />} />
             <Route path="web/spices" element={<Spices />} />
             <Route path="web/b2b" element={<B2B />} />
+            <Route path="web/productDetails/:id" element={<ProductDetails />} />
             <Route path="*" element={<div><h1>404 Not Found</h1></div>} />
           </Routes>
         </div>
