@@ -19,7 +19,7 @@ const appTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#62a8c4ff'
+      main: '#62c46fff'
     }
   },
 });

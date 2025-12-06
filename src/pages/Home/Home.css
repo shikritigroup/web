@@ -39,3 +39,29 @@ h6 {
     text-shadow: 2px 2px 4px #000000;
     text-align: left;
 }
+
+.car-img-1 {
+    height: 350px;
+}
+
+.car-img-2 {
+    height: 160px;
+}
+
+.car-img-3 {
+    height: 85px;
+}
+
+@media (min-width: 768px) {
+    .car-img-1 {
+        height: 400px;
+    }
+
+    .car-img-2 {
+        height: 300px;
+    }
+
+    .car-img-3 {
+        height: 92px;
+    }
+}
