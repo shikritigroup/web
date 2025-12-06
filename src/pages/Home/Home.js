@@ -7,7 +7,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import MostSales from "../../components/MostSales/MostSales";
-import { Image } from "@mui/icons-material";
 
 export default function Home() {
   const [lookups, setLookups] = useState()

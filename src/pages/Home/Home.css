@@ -12,6 +12,13 @@
     color: #ffffff;
     text-shadow: 2px 2px 4px #000000;
     border: 1px solid #fff;
+    font-weight: 400;
+}
+
+.btn-explore-secondary:hover {
+    background-color: #ffffff56;
+    color: #fffffff1;
+    font-weight: 600;
 }
 
 .btn-explore {
@@ -32,9 +39,9 @@
 }
 
 .details-texts h3,
-h4,
-h5,
-h6 {
+.details-texts h4,
+.details-texts h5,
+.details-texts h6 {
     color: #fff;
     text-shadow: 2px 2px 4px #000000;
     text-align: left;
@@ -52,7 +59,7 @@ h6 {
     height: 85px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     .car-img-1 {
         height: 400px;
     }

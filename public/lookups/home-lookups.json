@@ -1,20 +1,32 @@
 {
     "incenses": [
-        "/web/images/ad/Incense1.jpg",
-        "/web/images/ad/Incense2.jpg",
-        "/web/images/ad/Incense3.jpg",
-        "/web/images/ad/Incense4.jpg"
+        "/web/images/ad/Incenses/Incense1.jpeg",
+        "/web/images/ad/Incenses/Incense2.jpeg",
+        "/web/images/ad/Incenses/Incense3.jpeg",
+        "/web/images/ad/Incenses/Incense4.jpeg",
+        "/web/images/ad/Incenses/Incense5.jpeg",
+        "/web/images/ad/Incenses/Incense6.jpeg",
+        "/web/images/ad/Incenses/Incense7.jpeg",
+        "/web/images/ad/Incenses/Incense8.jpeg",
+        "/web/images/ad/Incenses/Incense9.jpeg",
+        "/web/images/ad/Incenses/Incense10.jpeg",
+        "/web/images/ad/Incenses/Incense11.jpeg",
+        "/web/images/ad/Incenses/Incense12.jpeg",
+        "/web/images/ad/Incenses/Incense13.jpeg",
+        "/web/images/ad/Incenses/Incense14.jpeg",
+        "/web/images/ad/Incenses/Incense15.jpeg",
+        "/web/images/ad/Incenses/Incense16.jpeg"
     ],
     "spices": [
-        "/web/images/ad/Spices1.jpg",
-        "/web/images/ad/Spices2.jpg",
-        "/web/images/ad/Spices3.jpg",
-        "/web/images/ad/Spices4.jpg",
-        "/web/images/ad/Spices5.webp"
+        "/web/images/ad/Spices/Spices1.jpg",
+        "/web/images/ad/Spices/Spices2.jpg",
+        "/web/images/ad/Spices/Spices3.jpg",
+        "/web/images/ad/Spices/Spices4.jpg",
+        "/web/images/ad/Spices/Spices5.webp"
     ],
     "b2bs": [
-        "/web/images/ad/b2b.jpg",
-        "/web/images/ad/b2b_1.jpg"
+        "/web/images/ad/B2Bs/b2b.jpg",
+        "/web/images/ad/B2Bs/b2b_1.jpg"
     ],
     "bestSaleIncenses": [
         {
