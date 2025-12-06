@@ -35,7 +35,7 @@ function Header() {
             <AppBar position="sticky">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
@@ -69,11 +69,9 @@ function Header() {
                                 ))}
                             </Menu>
                         </Box>
-
-                        {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                        <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '150px' } }}>
+                        <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '60px' } }}>
                             <Link to="/web" className='menu-title' >
-                                Shikriti
+                                <img alt='logo' src='/web/images/logo.png'></img>
                             </Link>
                         </Box>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="menu-item-container">
@@ -81,9 +79,9 @@ function Header() {
                                 <Link key={'pages_' + index} className='menu-item' to={"web/" + page}>{page}</Link>
                             ))}
                         </Box>
-                        <Box sx={{ flexGrow: 0 }}>
+                        <Box>
                             <Tooltip title="Cart">
-                                <Link className='menu-item' to="web/Cart">
+                                <Link to="web/Cart" className="cart-icon">
                                     <ShoppingCartIcon sx={{ my: 2, color: 'black', display: 'block' }}></ShoppingCartIcon>
                                 </Link>
                             </Tooltip>
