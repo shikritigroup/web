@@ -1,0 +1,19 @@
+{
+    "incenses": [
+        "images/Incense1.jpg",
+        "images/Incense2.jpg",
+        "images/Incense3.jpg",
+        "images/Incense4.jpg"
+    ],
+    "spices": [
+        "images/Spices1.jpg",
+        "images/Spices2.jpg",
+        "images/Spices3.jpg",
+        "images/Spices4.jpg",
+        "images/Spices5.webp"
+    ],
+    "b2bs": [
+        "images/b2b.jpg",
+        "images/b2b_1.jpg"
+    ]
+}

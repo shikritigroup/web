@@ -32,7 +32,7 @@ function Header() {
             {...{ timeout: 400 }}
             transition={{ duration: 5000, delay: 0.1 }}
         >
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -62,8 +62,8 @@ function Header() {
                                 onClose={handleCloseNavMenu}
                                 sx={{ display: { xs: 'block', md: 'none' } }}
                             >
-                                {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                {pages.map((page, index) => (
+                                    <MenuItem key={'menuItem_' + index} onClick={handleCloseNavMenu}>
                                         <Link to={"web/" + page} className='menu-item'>{page}</Link>
                                     </MenuItem>
                                 ))}
@@ -77,8 +77,8 @@ function Header() {
                             </Link>
                         </Box>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="menu-item-container">
-                            {pages.map((page) => (
-                                <Link className='menu-item' to={"web/" + page}>{page}</Link>
+                            {pages.map((page, index) => (
+                                <Link key={'pages_' + index} className='menu-item' to={"web/" + page}>{page}</Link>
                             ))}
                         </Box>
                         <Box sx={{ flexGrow: 0 }}>

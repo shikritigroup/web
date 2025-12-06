@@ -19,7 +19,7 @@ const appTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1bb6a636'
+      main: '#62a8c4ff'
     }
   },
 });
@@ -30,7 +30,7 @@ function App() {
       <ThemeProvider theme={appTheme}>
         <CssBaseline />
         <Header></Header>
-        <div className='bg-white container'>
+        <div className='app-container'>
           <Routes>
             <Route path="web" element={<Home />} />
             <Route path="web/about" element={<About />} />

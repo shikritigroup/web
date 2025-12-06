@@ -8,8 +8,10 @@
 }
 
 .btn-explore-secondary {
-    background-color: #fff;
-    color: #0f766e;
+    background-color: #5f5f5f60;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+    border: 1px solid #fff;
 }
 
 .btn-explore {

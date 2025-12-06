@@ -1,9 +1,16 @@
+.nav-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: inherit;
+}
+
 .menu-item-container {
     justify-content: center;
 }
 
 .menu-item {
-    width: 80px;
+    width: 100px;
     height: 25px;
     font-size: 18px;
     font-family: 'monospace';
