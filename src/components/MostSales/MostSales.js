@@ -30,12 +30,19 @@ export default function MostSales({ headerText, items, moreLink }) {
 
 
 export function ProductCart({ item }) {
-    return <Grid size={{ lg: 2, sm: 3, xs: 12 }}>
-        <Box padding="5px">
-            <img src={item.thumbnail} height="70px" width="100%"></img>
-            <Box>
-
+    return <Grid size={{ lg: 2, sm: 3, xs: 12 }} sx={{ padding: "2px", border: '1px solid #4e4e4e1e', borderRadius: '5px' }}>
+        <Link to={'/web/productdetails/' + item.id} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Box padding="5px">
+                <img src={item.thumbnail} height="70px" width="100%"></img>
+                <Box sx={{ fontWeight: "Bold" }}>
+                    {item.name}
+                </Box>
+                <Box>
+                    <b>Price: </b>
+                    <Typography variant="caption" sx={{ textDecoration: "line-through" }} >₹{item.price.actualPrice}</Typography>
+                    <Typography variant="caption"> ₹{item.price.offerPrice}</Typography>
+                </Box>
             </Box>
-        </Box>
+        </Link>
     </Grid>
 }
