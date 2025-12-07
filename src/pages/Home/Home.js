@@ -23,14 +23,14 @@ export default function Home() {
       <Grid container>
         <Grid size={{ lg: 7, sm: 6, xs: 12 }}>
           <Box sx={{ p: 1 }}>
-            <AppCarousel name="incenses" list={lookups?.incenses} className="car-img-1" link="incense" exploretype="secondary"
+            <AppCarousel name="incenses" list={lookups?.incenses} className="car-img-1" link="Incense" exploretype="secondary"
               btnText="Explore Products"
               t1="Experience the" t2="Divine Fragrance" t4="Handcrafted incense sticks and authentic Indian masala powders made with traditional methods and premium natural ingredients by SHIKRITI GROUP." />
           </Box>
         </Grid>
         <Grid size={{ lg: 5, sm: 6, xs: 12 }}>
           <Box sx={{ p: 1, pl: { md: 0, xs: 1 } }} xs={{ p: 1 }}>
-            <AppCarousel name="spices" list={lookups?.spices} className="car-img-2" btnText="Explore Products" link="spices"
+            <AppCarousel name="spices" list={lookups?.spices} className="car-img-2" btnText="Explore Products" link="Spices"
               t3="100% Natural & Pure by SHIKRITI GROUP" exploretype="secondary" />
           </Box>
           <Box sx={{ p: { md: 0, xs: 1 }, pr: 1 }} sm={{ p: 1 }}>

@@ -31,7 +31,7 @@ export default function Contact() {
                 return <Box key={"call_" + index}>
                   {index > 0 &&
                     <Typography sx={{ padding: "0 5px", display: "inline-flex" }}> / </Typography>}
-                  <Link to={"tel:+91" + call}>{call}</Link>
+                  <Link to={"tel:" + call.replace(/\s/g, '')} about="_blank">{call}</Link>
                 </Box>
               })
             }
@@ -49,7 +49,7 @@ export default function Contact() {
                 return <Box key={"whatsApps_" + index}>
                   {index > 0 &&
                     <Typography sx={{ padding: "0 5px", display: "inline-flex" }}> / </Typography>}
-                  <Link to={"https://wa.me/+91" + whatsApp}>{whatsApp}</Link>
+                  <Link to={"https://wa.me/" + whatsApp.replace(/\s/g, '') + "?text='https://shikritigroup.github.io/web/'"} about="_blank">{whatsApp}</Link>
                 </Box>
               })
             }
