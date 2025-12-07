@@ -6,7 +6,7 @@ import Contact from './pages/Contact/Contact';
 import Spices from './pages/Spices';
 import SignUP from './pages/SignUP';
 import Cart from './pages/Cart';
-import Incenses from './pages/Incenses';
+import Incenses from './pages/Incenses/Incenses';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Terms from './pages/Terms';
