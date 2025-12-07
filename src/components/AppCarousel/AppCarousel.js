@@ -16,7 +16,7 @@ export default function AppCarousel({ name, list, className, link, exploretype, 
                 <Carousel showArrows={false} autoPlay={true} showThumbs={false} infiniteLoop={true} showStatus={false}>
                     {list.map((item, index) => <img alt={item} key={'carousel_item_' + name + '_' + index} src={item} className={className} />)}
                 </Carousel>
-                <ButtonExplore link={link} text={btnText} type={exploretype} />
+                {btnText && <ButtonExplore link={link} text={btnText} type={exploretype} />}
                 <Box className="details-texts">
                     <Typography variant="h3">{t1}</Typography>
                     <Typography variant="h4">{t2}</Typography>

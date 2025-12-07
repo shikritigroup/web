@@ -7,7 +7,7 @@ import MostSales from "../../components/MostSales/MostSales";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
 
 export default function Home() {
-  const [lookups, setLookups] = useState()
+  const [lookups, setLookups] = useState({});
 
   useEffect(() => {
     loadLookups();
@@ -45,8 +45,8 @@ export default function Home() {
           </Box>
         </Grid>
       </Grid>
-      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses} moreLink="/web/Incenses"></MostSales>
-      <MostSales headerText="Last Month Best Sales Spices" items={lookups?.bestSaleSpices} moreLink="/web/Spices"></MostSales>
+      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses} moreLink="/web/Incenses" type="incenses"></MostSales>
+      <MostSales headerText="Last Month Best Sales Spices" items={lookups?.bestSaleSpices} moreLink="/web/Spices" type="spices"></MostSales>
     </Box >
   )
 }

@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
-import Spices from './pages/Spices';
+import Spices from './pages/Spices/Spices';
 import SignUP from './pages/SignUP';
 import Cart from './pages/Cart';
 import Incenses from './pages/Incenses/Incenses';
@@ -43,7 +43,7 @@ function App() {
             <Route path="web/Incenses" element={<Incenses />} />
             <Route path="web/spices" element={<Spices />} />
             <Route path="web/b2b" element={<B2B />} />
-            <Route path="web/productDetails/:id" element={<ProductDetails />} />
+            <Route path="web/productDetails/:id/:type" element={<ProductDetails />} />
             <Route path="*" element={<div><h1>404 Not Found</h1></div>} />
           </Routes>
         </div>

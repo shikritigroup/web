@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-export default function ProductCart({ item }) {
+export default function ProductCart({ item, type }) {
     return <Grid size={{ lg: 2, sm: 3, xs: 12 }} sx={{ padding: "2px", border: '1px solid #4e4e4e1e', borderRadius: '5px' }}>
         <Box padding="5px">
-            <Link to={'/web/productdetails/' + item.id} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to={'/web/productdetails/' + item.id + '/' + type} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <img alt={item.name} src={item.thumbnail} height="70px" width="100%"></img>
                 <Tooltip title={item.name}>
                     <Box sx={{ textOverflow: "ellipsis", overflow: "hidden", display: "inline-block", textWrap: "nowrap", maxWidth: "98%" }}>
