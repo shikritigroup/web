@@ -8,17 +8,9 @@ export default function Footer() {
       <Box sx={{ borderTop: 1, borderColor: '#c0c0c0ff', pt: 2, textAlign: 'left' }}>
         <Grid container>
           <Grid size={{ md: 6, xs: 12 }}>
-            <ul>
-              <li>Organic, Non-Synthetic and Eco-friendly</li>
-              <li>Purify the air, updivft the Prayers</li>
-              <li>Designed for calm, chosen for Yoga</li>
-              <li>Exclusive long-lasting natural aroma that soothes your mind</li>
-              <li>We are part of your Yoga class, Aroma therapy</li>
-              <li>Focusing on female empowerment</li>
-              <li>Target is to reach EVERY household with LOW price and HIGH quadivty</li>
-              <li>Offering HIGH margin to our partners</li>
-              <li>Providing after sales support and customization options</li>
-            </ul>
+            <Box sx={{ textAlign: 'left' }}>
+              <Box>100% Natural & Pure by SHIKRITI GROUP</Box>
+            </Box>
           </Grid>
           <Grid size={{ md: 6, xs: 12 }}>
             <Box sx={{ textAlign: 'right' }}>

@@ -14,7 +14,7 @@ export default function ProductDetails() {
     if (id && type) {
       loadLookups(id, type);
     }
-  }, [])
+  }, [id, type])
 
   const loadLookups = async (id, type) => {
     const res = await axios.get(`/web/lookups/${type}.json`);
@@ -27,34 +27,34 @@ export default function ProductDetails() {
   return (
     <>
       {product &&
-        <Box sx={{ padding: '10px' }}>
+        <Box sx={{ padding: '25px' }}>
           <Grid container>
             <Grid size={{ md: 6, xs: 12 }}>
               <AppCarousel name="ProductDetails" list={product?.images}></AppCarousel>
             </Grid>
             <Grid size={{ md: 6, xs: 12 }}>
-              <Box sx={{ textAlign: "left", padding: "5px" }}>
-                <Typography>
-                  Name:  {product?.name}
+              <Box sx={{ textAlign: "left", padding: "0 25px" }}>
+                <Typography sx={{ fontSize: "25px" }}>
+                  {product?.name}
                 </Typography>
-                <Typography>
-                  Description:  {product?.description}
-                </Typography>
-                <Typography>
-                  Product details:  {product?.details}
-                </Typography>
+                <Typography sx={{ fontSize: "12px" }}>100% Natural & Pure by SHIKRITI GROUP</Typography>
                 <Box>
-                  Price:
-                  <Typography variant="caption" sx={{ textDecoration: "line-through", fontWeight: "bold", padding: '0 5px' }} >
-                    ₹{Number(product?.price.actualPrice).toFixed(2)}
+                  <Typography variant="caption" sx={{ fontWeight: "bold", padding: '0 3px', fontSize: "25px" }}>
+                    ₹{Number(product.price.offerPrice).toFixed(2)}
                   </Typography>
-                  <Typography variant="caption" sx={{ fontWeight: "bold" }}>
-                    ₹{Number(product?.price.offerPrice).toFixed(2)}
+                  <Typography variant="caption" sx={{ textDecoration: "line-through", color: '#888888ff' }} >
+                    ₹{Number(product.price.actualPrice).toFixed(2)}
+                  </Typography>
+                  <Typography variant="caption" sx={{ fontWeight: "bold", padding: '0 3px', color: '#28d311ff' }} >
+                    {product.price.offer} off
                   </Typography>
                 </Box>
-                <Box sx={{ padding: "5px 0" }}>
-                  <AddShoppingCartIcon></AddShoppingCartIcon>
-                </Box>
+                <Typography>
+                  {product?.description}
+                </Typography>
+                <ul>
+                  {product?.details.split('\n ').map((del) => <li>{del}</li>)}
+                </ul>
               </Box>
             </Grid>
           </Grid>
