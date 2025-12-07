@@ -4,7 +4,7 @@ import "./Footer.css"
 
 export default function Footer() {
   return (
-    <Box sx={{ p: 1, paddingTop: "100px" }}>
+    <Box sx={{ p: 1, paddingTop: "50px" }}>
       <Box sx={{ borderTop: 1, borderColor: '#c0c0c0ff', pt: 2, textAlign: 'left' }}>
         <Grid container>
           <Grid size={{ md: 6, xs: 12 }}>

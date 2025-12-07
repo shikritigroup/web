@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function ProductDetails() {
   const [product, setProduct] = useState();
