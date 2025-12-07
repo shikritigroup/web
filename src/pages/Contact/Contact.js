@@ -43,10 +43,10 @@ export default function Contact() {
           <SvgIcon>
             <path d={svgPath} />
           </SvgIcon>
-          <Box sx={{ paddingLeft: "10px", display: "inline-flex", display: "inline-flex" }}>
+          <Box sx={{ paddingLeft: "10px", display: "inline-flex" }}>
             {
               contacts.whatsApps.map((whatsApp, index) => {
-                return <Box key={"call_" + index}>
+                return <Box key={"whatsApps_" + index}>
                   {index > 0 &&
                     <Typography sx={{ padding: "0 5px", display: "inline-flex" }}> / </Typography>}
                   <Link to={"https://wa.me/+91" + whatsApp}>{whatsApp}</Link>
