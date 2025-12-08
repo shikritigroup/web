@@ -1,5 +1,5 @@
 export const ROUTE_PATH = {
-    BASE: "web/",
+    BASE: "",
     ABOUT: "About",
     CONTACT: "Contact",
     CART: "Cart",
