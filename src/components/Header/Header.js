@@ -12,8 +12,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Slide from '@mui/material/Slide';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { ROUTE_PATH } from '../../helper/Constants';
 
-const pages = ['Incenses', 'Spices', 'About', 'Contact', 'Terms', 'B2B'];
+const pages = [ROUTE_PATH.INCENSES, ROUTE_PATH.SPICES, ROUTE_PATH.ABOUT, ROUTE_PATH.CONTACT, ROUTE_PATH.TERMS, ROUTE_PATH.B2B];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -64,24 +65,24 @@ function Header() {
                             >
                                 {pages.map((page, index) => (
                                     <MenuItem key={'menuItem_' + index} onClick={handleCloseNavMenu}>
-                                        <Link to={"web/" + page} className='menu-item'>{page}</Link>
+                                        <Link to={ROUTE_PATH.BASE + page} className='menu-item'>{page}</Link>
                                     </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
                         <Box sx={{ flexGrow: { xs: 7, md: 'revert', width: '60px' } }}>
-                            <Link to="/web" className='menu-title' >
+                            <Link to={ROUTE_PATH.BASE} className='menu-title' >
                                 <img alt='logo' src='/web/images/logo.png'></img>
                             </Link>
                         </Box>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} className="menu-item-container">
                             {pages.map((page, index) => (
-                                <Link key={'pages_' + index} className='menu-item' to={"web/" + page}>{page}</Link>
+                                <Link key={'pages_' + index} className='menu-item' to={ROUTE_PATH.BASE + page}>{page}</Link>
                             ))}
                         </Box>
                         <Box>
                             <Tooltip title="Cart">
-                                <Link to="web/Cart" className="cart-icon">
+                                <Link to={ROUTE_PATH.BASE + ROUTE_PATH.CART} className="cart-icon">
                                     <ShoppingCartIcon sx={{ my: 2, color: 'black', display: 'block' }}></ShoppingCartIcon>
                                 </Link>
                             </Tooltip>

@@ -15,6 +15,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import B2B from './pages/B2B/B2B';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import { ROUTE_PATH } from './helper/Constants';
 
 const appTheme = createTheme({
   palette: {
@@ -33,17 +34,17 @@ function App() {
         <Header></Header>
         <div className='app-container'>
           <Routes>
-            <Route path="web" element={<Home />} />
-            <Route path="web/about" element={<About />} />
-            <Route path="web/contact" element={<Contact />} />
-            <Route path="web/cart" element={<Cart />} />
-            <Route path="web/checkout" element={<Checkout />} />
-            <Route path="web/terms" element={<Terms />} />
-            <Route path="web/signUP" element={<SignUP />} />
-            <Route path="web/Incenses" element={<Incenses />} />
-            <Route path="web/spices" element={<Spices />} />
-            <Route path="web/b2b" element={<B2B />} />
-            <Route path="web/productDetails/:id/:type" element={<ProductDetails />} />
+            <Route path={ROUTE_PATH.BASE} element={<Home />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.ABOUT} element={<About />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.CONTACT} element={<Contact />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.CART} element={<Cart />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.CHECKOUT} element={<Checkout />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.TERMS} element={<Terms />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.SIGNUP} element={<SignUP />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.INCENSES} element={<Incenses />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.SPICES} element={<Spices />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.B2B} element={<B2B />} />
+            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.PRODUCT_DETAILS + ':id/:type'} element={<ProductDetails />} />
             <Route path="*" element={<div><h1>404 Not Found</h1></div>} />
           </Routes>
         </div>
