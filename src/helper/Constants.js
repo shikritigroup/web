@@ -10,9 +10,12 @@ export const ROUTE_PATH = {
     SPICES: "Spices",
     B2B: "B2B",
     PRODUCT_DETAILS: "Product/Details/",
-} 
+}
 
 export const API = {
     BASE: "/web",
-    HOME_LOOKUPS: "/lookups/home-lookups.json"
+    HOME_LOOKUPS: "/lookups/home-lookups.json",
+    CONTACTS: "/lookups/contacts.json",
+    INCENSES: "/lookups/incenses.json",
+    SPICES: "/lookups/spices.json"
 } 

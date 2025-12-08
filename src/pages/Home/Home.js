@@ -46,8 +46,8 @@ export default function Home() {
           </Box>
         </Grid>
       </Grid>
-      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses} moreLink={ROUTE_PATH.INCENSES} type="incenses"></MostSales>
-      <MostSales headerText="Last Month Best Sales Spices" items={lookups?.bestSaleSpices} moreLink={ROUTE_PATH.SPICES} type="spices"></MostSales>
+      <MostSales headerText="Last Month Best Sales Incenses" items={lookups?.bestSaleIncenses} moreLink={ROUTE_PATH.INCENSES} type={ROUTE_PATH.INCENSES}></MostSales>
+      <MostSales headerText="Last Month Best Sales Spices" items={lookups?.bestSaleSpices} moreLink={ROUTE_PATH.SPICES} type={ROUTE_PATH.SPICES}></MostSales>
     </Box >
   )
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
+import { API, ROUTE_PATH } from "../../helper/Constants";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState();
@@ -16,7 +17,7 @@ export default function ProductDetails() {
   }, [id, type])
 
   const loadLookups = async (id, type) => {
-    const res = await axios.get(`/web/lookups/${type}.json`);
+    const res = await axios.get(API.BASE + (type === ROUTE_PATH.INCENSES ? API.INCENSES : API.SPICES));
     const products = res?.data?.filter((p) => p.id === id);
     if (products && products[0]) {
       setProduct(products[0]);
@@ -52,7 +53,7 @@ export default function ProductDetails() {
                   {product?.description}
                 </Typography>
                 <ul>
-                  {product?.details.split('\n ').map((del) => <li>{del}</li>)}
+                  {product?.details.split('\n ').map((del, index) => <li key={'del_' + index}>{del}</li>)}
                 </ul>
               </Box>
             </Grid>

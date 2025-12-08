@@ -2,6 +2,7 @@ import { Box, FormControl, Grid, Input, InputLabel } from "@mui/material";
 import ProductCart from "../../components/ProductCart/ProductCart";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API, ROUTE_PATH } from "../../helper/Constants";
 
 export default function Spices() {
   const [items, setItems] = useState([]);
@@ -12,7 +13,7 @@ export default function Spices() {
   }, [])
 
   const loadLookups = async () => {
-    const res = await axios.get('/web/lookups/spices.json');
+    const res = await axios.get(API.BASE + API.SPICES);
     setItems(res.data);
   }
 
@@ -26,7 +27,7 @@ export default function Spices() {
       </Box>
       <Grid container spacing={1}>
         {items?.length > 0 && items.filter((item) => (!searchText || item.name.toLowerCase().indexOf(searchText?.toLowerCase()) > -1))
-          .map((item, index) => <ProductCart key={'best-product' + index} item={item} type="incenses"></ProductCart>)}
+          .map((item, index) => <ProductCart key={'best-product' + index} item={item} type={ROUTE_PATH.SPICES}></ProductCart>)}
       </Grid>
     </Box>
   )

@@ -1,6 +1,7 @@
 import { Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup, Input, InputLabel } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API } from "../../helper/Constants";
 
 export default function B2B() {
   const [contacts, setContacts] = useState();
@@ -16,7 +17,7 @@ export default function B2B() {
   }, [])
 
   const loadLookups = async () => {
-    const res = await axios.get(`/web/lookups/contacts.json`);
+    const res = await axios.get(API.BASE + API.CONTACTS);
     setContacts(res?.data);
   }
 
