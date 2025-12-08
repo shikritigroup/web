@@ -29,7 +29,7 @@ export default function AppCarousel({ name, list, className, link, exploretype, 
 }
 
 function ButtonExplore({ link, text, type }) {
-    return (<Link to={link} className={'btn-explore btn-explore-' + (type ?? 'primary')}>
+    return (<Link to={link} className={'btn-explore btn-explore-' + (type ?? 'primary')} style={{ zIndex: 2 }}>
         {text}
         <ArrowForwardIcon sx={{ pl: 1 }} />
     </Link>)

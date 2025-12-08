@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,11 +12,16 @@ import Slide from '@mui/material/Slide';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { ROUTE_PATH } from '../../helper/Constants';
+import { FormControl, InputLabel, Select } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 const pages = [ROUTE_PATH.INCENSES, ROUTE_PATH.SPICES, ROUTE_PATH.ABOUT, ROUTE_PATH.CONTACT, ROUTE_PATH.TERMS, ROUTE_PATH.B2B];
 
 function Header() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [langauge, setLangauge] = useState('en');
+    const { t, i18n } = useTranslation();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -26,6 +30,11 @@ function Header() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
+
+    const handleLangaugeChange = (e) => {
+        setLangauge(e.target.value);
+        i18n.changeLanguage(e.target.value);
+    }
 
     return (
         <Slide
@@ -61,8 +70,23 @@ function Header() {
                                 }}
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
-                                sx={{ display: { xs: 'block', md: 'none' } }}
+                                sx={{ display: { xs: 'block', md: 'none' }, textAlign: "left" }}
                             >
+                                <MenuItem>
+                                    <FormControl>
+                                        <InputLabel id="lang-select-label" sx={{ color: "#000 !important" }}>{t('language')}</InputLabel>
+                                        <Select
+                                            labelId="lang-select-label"
+                                            id="lang-select"
+                                            value={langauge}
+                                            label="Langauge"
+                                            onChange={handleLangaugeChange}
+                                        >
+                                            <MenuItem value={'be'} >{t('bengali')}</MenuItem>
+                                            <MenuItem value={'en'}>{t('english')}</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                </MenuItem>
                                 {pages.map((page, index) => (
                                     <MenuItem key={'menuItem_' + index} onClick={handleCloseNavMenu}>
                                         <Link to={ROUTE_PATH.BASE + page} className='menu-item'>{page}</Link>
@@ -79,6 +103,19 @@ function Header() {
                             {pages.map((page, index) => (
                                 <Link key={'pages_' + index} className='menu-item' to={ROUTE_PATH.BASE + page}>{page}</Link>
                             ))}
+                            <FormControl>
+                                <InputLabel id="lang-select-label" sx={{ color: "#000 !important" }}>{t('language')}</InputLabel>
+                                <Select
+                                    labelId="lang-select-label"
+                                    id="lang-select"
+                                    value={langauge}
+                                    label="Langauge"
+                                    onChange={handleLangaugeChange}
+                                >
+                                    <MenuItem value={'be'} >{t('bengali')}</MenuItem>
+                                    <MenuItem value={'en'}>{t('english')}</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Box>
                         <Box>
                             <Tooltip title="Cart">

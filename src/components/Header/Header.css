@@ -36,3 +36,7 @@
     flex-direction: row-reverse;
     padding: 5px 11px;
 }
+
+.MuiSelect-select {
+    padding: 5px 32px 5px 5px !important;
+}
