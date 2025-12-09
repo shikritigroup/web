@@ -6,7 +6,9 @@ export default function ProductCart({ item, type }) {
     return <Grid size={{ lg: 2, sm: 3, xs: 12 }} sx={{ padding: "2px", border: '1px solid #4e4e4e1e', borderRadius: '5px' }}>
         <Box padding="5px">
             <Link to={'/' + ROUTE_PATH.BASE + ROUTE_PATH.PRODUCT_DETAILS + item.id + '/' + type} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <img alt={item.name} src={item.thumbnail} height="70px" width="100%"></img>
+                <Box sx={{ textAlign: "center" }}>
+                    <img alt={item.name} src={item.thumbnail} height="70px" style={{ maxWidth: "100%" }}></img>
+                </Box>
                 <Tooltip title={item.name + '. ' + item.description}>
                     <Box sx={{ textOverflow: "ellipsis", overflow: "hidden", display: "inline-block", textWrap: "nowrap", maxWidth: "98%" }}>
                         {item.name}

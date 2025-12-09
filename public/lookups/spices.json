@@ -1,98 +1,104 @@
 [
     {
-        "id": "b273b50e-98e9-467e-b2ce-d6996a2d5d64",
-        "name": "Supravat Incense Sticks",
+        "id": "SP1",
+        "name": "Red Chili Powder",
         "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense1.jpeg",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice1.jpg",
         "images": [
-            "/web/images/products/incenses/Incense1.jpeg",
-            "/web/images/products/incenses/Incense1.jpeg"
+            "/web/images/products/spices/spice1.jpg",
+            "/web/images/products/spices/spice1.jpg"
         ],
         "price": {
             "actualPrice": "20",
             "offerPrice": "18",
             "offer": "10%"
-        }
+        },
+        "actve": true
     },
     {
-        "id": "02d135a9-29de-412d-b0e5-ad0c36aaf4ab",
-        "name": "Agomoni Incense Sticks",
-        "description": "Floral jasmine aroma for peaceful ambiance",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense2.jpeg",
+        "id": "SP2",
+        "name": "Turmeric  Powder",
+        "description": "Premium sandalwood incense for meditation and relaxation",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice2.jpg",
         "images": [
-            "/web/images/products/incenses/Incense2.jpeg",
-            "/web/images/products/incenses/Incense2.jpeg"
-        ],
-        "price": {
-            "actualPrice": "20",
-            "offerPrice": "19",
-            "offer": "5%"
-        }
-    },
-    {
-        "id": "f5ed65dc-a301-4807-804b-6be97721f285",
-        "name": "Good News Incense Sticks",
-        "description": "Calming lavender scent for stress relief",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense3.jpeg",
-        "images": [
-            "/web/images/products/incenses/Incense3.jpeg",
-            "/web/images/products/incenses/Incense3.jpeg"
+            "/web/images/products/spices/spice2.jpg",
+            "/web/images/products/spices/spice2.jpg"
         ],
         "price": {
             "actualPrice": "20",
             "offerPrice": "18",
             "offer": "10%"
-        }
+        },
+        "actve": true
     },
     {
-        "id": "71221e56-aa10-4c15-bdd9-94ccd0f8235f",
-        "name": "Shyamrai Incense Sticks",
+        "id": "SP3",
+        "name": "Dhaniya Powder",
         "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense4.jpeg",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice3.jpg",
         "images": [
-            "/web/images/products/incenses/Incense4.jpeg",
-            "/web/images/products/incenses/Incense4.jpeg"
+            "/web/images/products/spices/spice3.jpg",
+            "/web/images/products/spices/spice3.jpg"
         ],
         "price": {
             "actualPrice": "20",
             "offerPrice": "18",
             "offer": "10%"
-        }
+        },
+        "actve": true
     },
     {
-        "id": "1ac6b928-b26f-4ea3-af48-b5ca32422574",
-        "name": "Arghya Incense Sticks",
+        "id": "SP4",
+        "name": "Jeera Powder",
         "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense5.jpeg",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice4.jpg",
         "images": [
-            "/web/images/products/incenses/Incense5.jpeg",
-            "/web/images/products/incenses/Incense5.jpeg"
+            "/web/images/products/spices/spice4.jpg",
+            "/web/images/products/spices/spice4.jpg"
         ],
         "price": {
             "actualPrice": "20",
             "offerPrice": "18",
             "offer": "10%"
-        }
+        },
+        "actve": true
     },
     {
-        "id": "fc8121ce-0d6b-4d33-9613-894e12e2ce98",
-        "name": "Red Soil Incense Sticks",
+        "id": "SP5",
+        "name": "Garam Masala Powder",
         "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
-        "thumbnail": "/web/images/products/incenses/Incense6.jpeg",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice5.jpg",
         "images": [
-            "/web/images/products/incenses/Incense6.jpeg",
-            "/web/images/products/incenses/Incense6.jpeg"
+            "/web/images/products/spices/spice5.jpg",
+            "/web/images/products/spices/spice5.jpg"
         ],
         "price": {
             "actualPrice": "20",
-            "offerPrice": "17",
-            "offer": "15%"
-        }
+            "offerPrice": "18",
+            "offer": "10%"
+        },
+        "actve": true
+    },
+    {
+        "id": "SP6",
+        "name": "Garam Masala",
+        "description": "Premium sandalwood incense for meditation and relaxation",
+        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "thumbnail": "/web/images/products/spices/spice6.jpg",
+        "images": [
+            "/web/images/products/spices/spice6.jpg",
+            "/web/images/products/spices/spice6.jpg"
+        ],
+        "price": {
+            "actualPrice": "20",
+            "offerPrice": "18",
+            "offer": "10%"
+        },
+        "actve": true
     }
 ]

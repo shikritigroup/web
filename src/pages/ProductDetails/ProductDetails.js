@@ -1,14 +1,18 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
 import { API, ROUTE_PATH } from "../../helper/Constants";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { addToCart } from "../../helper/OrderHelper";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState();
   const { id } = useParams();
   const { type } = useParams();
+
+  const navigator = useNavigate();
 
   useEffect(() => {
     if (id && type) {
@@ -24,15 +28,20 @@ export default function ProductDetails() {
     }
   }
 
+  const handelAddToCart = () => {
+    addToCart(id, type);
+    navigator("/" + ROUTE_PATH.CART);
+  }
+
   return (
     <>
       {product &&
         <Box sx={{ padding: '25px' }}>
           <Grid container>
-            <Grid size={{ md: 6, xs: 12 }}>
-              <AppCarousel name="ProductDetails" list={product?.images}></AppCarousel>
+            <Grid size={{ lg: 4, md: 6, xs: 12 }}>
+              <AppCarousel name="ProductDetails" list={product?.images} className={'product-details-img'}></AppCarousel>
             </Grid>
-            <Grid size={{ md: 6, xs: 12 }}>
+            <Grid size={{ lg: 8, md: 6, xs: 12 }}>
               <Box sx={{ textAlign: "left", padding: "0 25px" }}>
                 <Typography sx={{ fontSize: "25px" }}>
                   {product?.name}
@@ -55,6 +64,12 @@ export default function ProductDetails() {
                 <ul>
                   {product?.details.split('\n ').map((del, index) => <li key={'del_' + index}>{del}</li>)}
                 </ul>
+                <Button variant="contained" onClick={handelAddToCart}>
+                  <ShoppingCartIcon />
+                  <Typography>
+                    Add to Cart
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
           </Grid>

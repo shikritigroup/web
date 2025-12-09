@@ -5,7 +5,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Spices from './pages/Spices/Spices';
 import SignUP from './pages/SignUP';
-import Cart from './pages/Cart';
+import Cart from './pages/Cart/Cart';
 import Incenses from './pages/Incenses/Incenses';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
