@@ -1,17 +1,13 @@
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
-    <Box sx={{padding:"10px"}}>
-      <h1>About SHIKRITI</h1>
-      <Box sx={{ textAlign: "left" }}>
-        SHIKRITI offers a line of organic, non-synthetic, and eco-friendly products designed to purify the air and uplift
-        the spirit during prayers and yoga sessions. Each item features an exclusive, long-lasting natural aroma chosen
-        specifically to promote calm and soothe the mind, making them an integral part of any aroma therapy practice.
-        Beyond their high quality, SHIKRITI operates with a strong social mission focusing on female empowerment and aims
-        to reach every household by providing exceptional products at a low price point. The company also builds strong,
-        sustainable relationships with its partners, offering high margins, robust after-sales support, and customization options.
-      </Box>
+    <Box sx={{ padding: "10px" }}>
+      <h1>{t("about.head")}</h1>
+      <Box sx={{ textAlign: "left" }}>{t("about.details")}</Box>
     </Box>
-  )
+  );
 }
