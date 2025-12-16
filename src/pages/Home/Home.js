@@ -6,7 +6,6 @@ import axios from "axios";
 import MostSales from "../../components/MostSales/MostSales";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
 import { API, ROUTE_PATH } from "../../helper/Constants";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
