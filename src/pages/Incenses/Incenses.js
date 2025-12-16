@@ -1,5 +1,5 @@
 import { Box, FormControl, Grid, Input, InputLabel } from "@mui/material";
-import ProductCart from "../../components/ProductCart/ProductCart";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API, ROUTE_PATH } from "../../helper/Constants";
@@ -27,7 +27,7 @@ export default function Incenses() {
       </Box>
       <Grid container spacing={1}>
         {items?.length > 0 && items.filter((item) => (!searchText || item.name.toLowerCase().indexOf(searchText?.toLowerCase()) > -1))
-          .map((item, index) => <ProductCart key={'best-product' + index} item={item} type={ROUTE_PATH.INCENSES}></ProductCart>)}
+          .map((item, index) => <ProductCard key={'best-product' + index} item={item} type={ROUTE_PATH.INCENSES}></ProductCard>)}
       </Grid>
     </Box>
   )

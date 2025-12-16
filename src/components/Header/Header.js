@@ -41,9 +41,10 @@ function Header() {
   };
 
   useEffect(() => {
+    localStorage.setItem("userLanguage", langauge);
     setLangauge(langauge);
     i18n.changeLanguage(langauge);
-  }, [langauge]);
+  }, [langauge, i18n]);
 
   return (
     <Slide
