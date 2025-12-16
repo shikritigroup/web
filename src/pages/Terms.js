@@ -11,7 +11,6 @@ export default function Tarms() {
         sx={{ textAlign: "left" }}
         dangerouslySetInnerHTML={{ __html: t("terms.details") }}
       ></Box>
-      ;
     </Box>
   );
 }
