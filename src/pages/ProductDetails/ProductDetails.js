@@ -7,7 +7,7 @@ import { API, ROUTE_PATH } from "../../helper/Constants";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { addToCart } from "../../helper/OrderHelper";
 import { useTranslation } from "react-i18next";
-import { displayNo } from "../../helper/number";
+import { displayNo } from "../../helper/Number";
 
 export default function ProductDetails() {
   const [t] = useTranslation();

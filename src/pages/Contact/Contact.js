@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { API } from "../../helper/Constants";
 import { useTranslation } from "react-i18next";
+import { displayNo } from "../../helper/Number";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function Contact() {
   const svgPath =
@@ -42,7 +44,7 @@ export default function Contact() {
                       </Typography>
                     )}
                     <Link to={"tel:" + call.replace(/\s/g, "")} about="_blank">
-                      {call}
+                      {displayNo(call)}
                     </Link>
                   </Box>
                 );
@@ -75,7 +77,31 @@ export default function Contact() {
                       }
                       about="_blank"
                     >
-                      {whatsApp}
+                      {displayNo(whatsApp)}
+                    </Link>
+                  </Box>
+                );
+              })}
+            </Box>
+          </Box>
+        </Box>
+        <Box>
+          <Box sx={{ display: "inline-flex" }}>
+            <EmailIcon></EmailIcon>
+            <Box sx={{ paddingLeft: "10px", display: "inline-flex" }}>
+              {contacts.emails.map((email, index) => {
+                return (
+                  <Box key={"email_" + index}>
+                    {index > 0 && (
+                      <Typography
+                        sx={{ padding: "0 5px", display: "inline-flex" }}
+                      >
+                        {" "}
+                        /{" "}
+                      </Typography>
+                    )}
+                    <Link to={"mailto:" + email} about="_blank">
+                      {displayNo(email)}
                     </Link>
                   </Box>
                 );

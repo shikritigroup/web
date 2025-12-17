@@ -16,8 +16,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import B2B from "./pages/B2B/B2B";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import { ROUTE_PATH } from "./helper/Constants";
-import { useEffect } from "react";
-import { withRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const appTheme = createTheme({

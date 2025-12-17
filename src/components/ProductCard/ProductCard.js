@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ROUTE_PATH } from "../../helper/Constants";
-import { displayNo } from "../../helper/number";
+import { displayNo } from "../../helper/Number";
 import { useTranslation } from "react-i18next";
 
 export default function ProductCard({ item, type }) {

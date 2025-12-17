@@ -13,7 +13,7 @@ export const displayNo = (text) => {
     { key: "9", value: "৯" },
   ];
 
-  if (text && lan == "be") {
+  if (text && lan === "be") {
     digits.forEach((digit) => {
       text = text.replaceAll(digit.key, digit.value);
     });
