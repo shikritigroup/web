@@ -8,7 +8,11 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <Box sx={{ p: 1, paddingTop: "50px" }}>
+    <Box
+      sx={{
+        p: 1
+      }}
+    >
       <Box
         sx={{
           borderTop: 1,
@@ -29,17 +33,13 @@ export default function Footer() {
             <Box
               sx={{ lg: { textAlign: "right" }, sm: { textAlign: "center" } }}
             >
-              <Box>{t("footer.desc.line1")}</Box>
               <Box>
+                {t("footer.desc.line1")}
                 <Trans
                   i18nKey="footer.desc.line2"
                   components={{
-                    contactus: (
-                      <Link to={ROUTE_PATH.BASE + ROUTE_PATH.CONTACT}></Link>
-                    ),
-                    terms: (
-                      <Link to={ROUTE_PATH.BASE + ROUTE_PATH.TERMS}></Link>
-                    ),
+                    contactus: <Link to={ROUTE_PATH.CONTACT}></Link>,
+                    terms: <Link to={ROUTE_PATH.TERMS}></Link>,
                   }}
                 ></Trans>
               </Box>

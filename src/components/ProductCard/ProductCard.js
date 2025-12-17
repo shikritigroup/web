@@ -8,8 +8,11 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ROUTE_PATH } from "../../helper/Constants";
+import { displayNo } from "../../helper/number";
+import { useTranslation } from "react-i18next";
 
 export default function ProductCard({ item, type }) {
+  const [t] = useTranslation();
   const theme = useTheme();
   const imageStretch = !useMediaQuery(theme.breakpoints.up("md"));
 
@@ -24,14 +27,7 @@ export default function ProductCard({ item, type }) {
     >
       <Box padding="5px">
         <Link
-          to={
-            "/" +
-            ROUTE_PATH.BASE +
-            ROUTE_PATH.PRODUCT_DETAILS +
-            item.id +
-            "/" +
-            type
-          }
+          to={"/" + ROUTE_PATH.PRODUCT_DETAILS + item.id + "/" + type}
           style={{ textDecoration: "none", color: "inherit" }}
         >
           <Box sx={{ textAlign: "center" }}>
@@ -62,13 +58,13 @@ export default function ProductCard({ item, type }) {
                 variant="caption"
                 sx={{ fontWeight: "bold", padding: "0 3px" }}
               >
-                ₹{Number(item.price.offerPrice).toFixed(2)}
+                ₹{displayNo(Number(item.price.offerPrice).toFixed(2))}
               </Typography>
               <Typography
                 variant="caption"
                 sx={{ textDecoration: "line-through", color: "#888888ff" }}
               >
-                ₹{Number(item.price.actualPrice).toFixed(2)}
+                ₹{displayNo(Number(item.price.actualPrice).toFixed(2))}
               </Typography>
               <Typography
                 variant="caption"
@@ -78,7 +74,7 @@ export default function ProductCard({ item, type }) {
                   color: "#28d311ff",
                 }}
               >
-                {item.price.offer} off
+                {displayNo(item.price.offer)} {t("off")}
               </Typography>
             </Box>
           </Tooltip>

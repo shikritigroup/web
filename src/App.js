@@ -40,40 +40,40 @@ function App() {
           <Routes>
             <Route path={ROUTE_PATH.BASE} element={<Home />} />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.ABOUT}
+              path={ROUTE_PATH.ABOUT}
               element={<About />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.CONTACT}
+              path={ROUTE_PATH.CONTACT}
               element={<Contact />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.CART}
+              path={ROUTE_PATH.CART}
               element={<Cart />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.CHECKOUT}
+              path={ROUTE_PATH.CHECKOUT}
               element={<Checkout />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.TERMS}
+              path={ROUTE_PATH.TERMS}
               element={<Terms />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.SIGNUP}
+              path={ROUTE_PATH.SIGNUP}
               element={<SignUP />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.INCENSES}
+              path={ROUTE_PATH.INCENSES}
               element={<Incenses />}
             />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.SPICES}
+              path={ROUTE_PATH.SPICES}
               element={<Spices />}
             />
-            <Route path={ROUTE_PATH.BASE + ROUTE_PATH.B2B} element={<B2B />} />
+            <Route path={ROUTE_PATH.B2B} element={<B2B />} />
             <Route
-              path={ROUTE_PATH.BASE + ROUTE_PATH.PRODUCT_DETAILS + ":id/:type"}
+              path={ROUTE_PATH.PRODUCT_DETAILS + ":id/:type"}
               element={<ProductDetails />}
             />
             <Route

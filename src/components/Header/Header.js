@@ -111,7 +111,7 @@ function Header() {
                     sx={{ textAlign: "left" }}
                   >
                     <Link
-                      to={ROUTE_PATH.BASE + page.path}
+                      to={page.path}
                       className="menu-item"
                     >
                       {t(page.text)}
@@ -133,7 +133,7 @@ function Header() {
                 <Link
                   key={"pages_" + index}
                   className="menu-item"
-                  to={ROUTE_PATH.BASE + page.path}
+                  to={page.path}
                 >
                   {t(page.text)}
                 </Link>
@@ -162,7 +162,7 @@ function Header() {
             <Box>
               <Tooltip title="Cart">
                 <Link
-                  to={ROUTE_PATH.BASE + ROUTE_PATH.CART}
+                  to={ROUTE_PATH.CART}
                   className="cart-icon"
                 >
                   <ShoppingCartIcon
