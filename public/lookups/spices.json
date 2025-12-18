@@ -1,9 +1,36 @@
 [
     {
         "id": "SP1",
-        "name": "Red Chili Powder",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "লাল লঙ্কা গুঁড়া"
+            },
+            {
+                "key": "en",
+                "value": "Red Chili Powder"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice1.jpeg",
         "images": [
             "/web/images/products/spices/spice1.jpeg",
@@ -19,9 +46,36 @@
     },
     {
         "id": "SP2",
-        "name": "Turmeric  Powder",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "হলুদ গুঁড়া"
+            },
+            {
+                "key": "en",
+                "value": "Turmeric  Powder"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice2.jpg",
         "images": [
             "/web/images/products/spices/spice2.jpg",
@@ -37,9 +91,36 @@
     },
     {
         "id": "SP3",
-        "name": "Dhaniya Powder",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "ধনিয়া পাউডার"
+            },
+            {
+                "key": "en",
+                "value": "Dhaniya Powder"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice3.jpg",
         "images": [
             "/web/images/products/spices/spice3.jpg",
@@ -55,9 +136,36 @@
     },
     {
         "id": "SP4",
-        "name": "Jeera Powder",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "জিরা পাউডার"
+            },
+            {
+                "key": "en",
+                "value": "Jeera Powder"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice4.jpg",
         "images": [
             "/web/images/products/spices/spice4.jpg",
@@ -73,9 +181,36 @@
     },
     {
         "id": "SP5",
-        "name": "Garam Masala Powder",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "গরম মশলা গুঁড়ো"
+            },
+            {
+                "key": "en",
+                "value": "Garam Masala Powder"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice5.jpg",
         "images": [
             "/web/images/products/spices/spice5.jpg",
@@ -91,9 +226,36 @@
     },
     {
         "id": "SP6",
-        "name": "Garam Masala",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly.",
+        "name": [
+            {
+                "key": "be",
+                "value": "গরম মসলা"
+            },
+            {
+                "key": "en",
+                "value": "Garam Masala"
+            }
+        ],
+        "description": [
+            {
+                "key": "be",
+                "value": ""
+            },
+            {
+                "key": "en",
+                "value": ""
+            }
+        ],
+        "details": [
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০ গ্রাম।\n জৈব, অ-কৃত্রিম এবং পরিবেশ বান্ধব।"
+            },
+            {
+                "key": "en",
+                "value": "50g in one packet.\n Organic, Non-Synthetic and Eco-friendly."
+            }
+        ],
         "thumbnail": "/web/images/products/spices/spice6.jpg",
         "images": [
             "/web/images/products/spices/spice6.jpg",

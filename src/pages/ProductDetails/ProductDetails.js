@@ -14,6 +14,7 @@ export default function ProductDetails() {
   const [product, setProduct] = useState();
   const { id } = useParams();
   const { type } = useParams();
+  const lan = localStorage.getItem("userLanguage");
 
   const navigator = useNavigate();
 
@@ -53,10 +54,10 @@ export default function ProductDetails() {
             <Grid size={{ lg: 8, md: 6, xs: 12 }}>
               <Box sx={{ textAlign: "left", padding: "0 25px" }}>
                 <Typography sx={{ fontSize: "25px" }}>
-                  {product?.name}
+                  {product?.name.find((n) => n.key === lan).value}
                 </Typography>
                 <Typography sx={{ fontSize: "12px" }}>
-                  100% Natural & Pure by SHIKRITI GROUP
+                  {t("product.details.title")}
                 </Typography>
                 <Box>
                   <Typography
@@ -87,11 +88,16 @@ export default function ProductDetails() {
                     {t("off")}
                   </Typography>
                 </Box>
-                <Typography>{product?.description}</Typography>
+                <Typography>
+                  {product?.description.find((n) => n.key === lan).value}
+                </Typography>
                 <ul>
-                  {product?.details.split("\n ").map((del, index) => (
-                    <li key={"del_" + index}>{del}</li>
-                  ))}
+                  {product?.details
+                    ?.find((n) => n.key === lan).value
+                    ?.split("\n ")
+                    .map((del, index) => (
+                      <li key={"del_" + index}>{del}</li>
+                    ))}
                 </ul>
                 <Button variant="contained" onClick={handelAddToCart}>
                   <ShoppingCartIcon />

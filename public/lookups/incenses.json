@@ -1,9 +1,36 @@
 [
     {
         "id": "IN1",
-        "name": "Supravat Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Supravat Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "সুপ্রভাত ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense1_1.jpeg",
         "images": [
             "/web/images/products/incenses/Incense1_1.jpeg",
@@ -19,9 +46,36 @@
     },
     {
         "id": "IN2",
-        "name": "Agomoni Incense Sticks",
-        "description": "Floral jasmine aroma for peaceful ambiance",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Agomoni Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "আগোমনি ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Floral jasmine aroma for peaceful ambiance"
+            },
+            {
+                "key": "be",
+                "value": "শান্তিপূর্ণ পরিবেশের জন্য ফুলের জুঁইয়ের সুবাস"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense2.jpeg",
         "images": [
             "/web/images/products/incenses/Incense2.jpeg",
@@ -37,9 +91,36 @@
     },
     {
         "id": "IN3",
-        "name": "Good News Incense Sticks",
-        "description": "Calming lavender scent for stress relief",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "সুসংবাদ ধূপের কাঠি"
+            },
+            {
+                "key": "be",
+                "value": "আগোমনি ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Calming lavender scent for stress relief"
+            },
+            {
+                "key": "be",
+                "value": "মানসিক চাপ কমাতে ল্যাভেন্ডারের প্রশান্তিদায়ক সুগন্ধ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense3.jpeg",
         "images": [
             "/web/images/products/incenses/Incense3.jpeg",
@@ -55,9 +136,36 @@
     },
     {
         "id": "IN4",
-        "name": "Shyamrai Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Shyamrai Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "শ্যামরাই ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "মানসিক চাপ কমাতে ল্যাভেন্ডারের প্রশান্তিদায়ক সুগন্ধ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense4.jpeg",
         "images": [
             "/web/images/products/incenses/Incense4.jpeg",
@@ -73,9 +181,36 @@
     },
     {
         "id": "IN5",
-        "name": "Arghya Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Arghya Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "অর্ঘ্য ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense5.jpeg",
         "images": [
             "/web/images/products/incenses/Incense5.jpeg",
@@ -91,9 +226,36 @@
     },
     {
         "id": "IN6",
-        "name": "Red Soil Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Red Soil Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "লাল মাটি ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense6.jpeg",
         "images": [
             "/web/images/products/incenses/Incense6.jpeg",
@@ -109,9 +271,36 @@
     },
     {
         "id": "IN7",
-        "name": "RK Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "RK Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "আর.কে ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense7.jpeg",
         "images": [
             "/web/images/products/incenses/Incense7.jpeg",
@@ -127,9 +316,36 @@
     },
     {
         "id": "IN8",
-        "name": "Howrah Bridge Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Howrah Bridge Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "হাওড়া ব্রিজ ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense8.jpeg",
         "images": [
             "/web/images/products/incenses/Incense8.jpeg",
@@ -145,9 +361,36 @@
     },
     {
         "id": "IN9",
-        "name": "Rajanigandha Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Rajanigandha Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "রজনীগন্ধা ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense9.jpeg",
         "images": [
             "/web/images/products/incenses/Incense9.jpeg",
@@ -163,9 +406,36 @@
     },
     {
         "id": "IN10",
-        "name": "Saradapith Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Saradapith Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "সারদাপীঠ ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense10.jpeg",
         "images": [
             "/web/images/products/incenses/Incense10.jpeg",
@@ -181,9 +451,36 @@
     },
     {
         "id": "IN11",
-        "name": "Shankalp Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Shankalp Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "শঙ্কল্প ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense11.jpeg",
         "images": [
             "/web/images/products/incenses/Incense11.jpeg",
@@ -199,9 +496,36 @@
     },
     {
         "id": "IN12",
-        "name": "Monsoon's Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Monsoon's Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "বর্ষার ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense12.jpeg",
         "images": [
             "/web/images/products/incenses/Incense12.jpeg",
@@ -217,9 +541,36 @@
     },
     {
         "id": "IN13",
-        "name": "Arpan Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Arpan Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "অর্পন ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense13.jpeg",
         "images": [
             "/web/images/products/incenses/Incense13.jpeg",
@@ -235,9 +586,36 @@
     },
     {
         "id": "IN14",
-        "name": "Chandan Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Chandan Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "চন্দন ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense14.jpeg",
         "images": [
             "/web/images/products/incenses/Incense14.jpeg",
@@ -253,9 +631,36 @@
     },
     {
         "id": "IN15",
-        "name": "Golden yug Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Golden yug Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "সোনালি যুগ ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense15.jpeg",
         "images": [
             "/web/images/products/incenses/Incense15.jpeg",
@@ -271,9 +676,36 @@
     },
     {
         "id": "IN16",
-        "name": "Dip Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Dip Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "দীপ ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense16.jpeg",
         "images": [
             "/web/images/products/incenses/Incense16.jpeg",
@@ -289,9 +721,36 @@
     },
     {
         "id": "IN17",
-        "name": "Duna chandan Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "50 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Duna chandan Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "ধুনো চন্দন ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "50 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ৫০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense17.jpeg",
         "images": [
             "/web/images/products/incenses/Incense17.jpeg",
@@ -307,9 +766,36 @@
     },
     {
         "id": "IN18",
-        "name": "Raj Duna Dup Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Raj Duna Dup Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "রাজ ধুনো ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense18.jpeg",
         "images": [
             "/web/images/products/incenses/Incense18.jpeg",
@@ -325,27 +811,81 @@
     },
     {
         "id": "IN19",
-        "name": "Utsarga 100 Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Utsarga 100 Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "উৎসর্গ ১০০ ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "100 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ১০০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense19.jpeg",
         "images": [
             "/web/images/products/incenses/Incense19.jpeg",
             "/web/images/products/incenses/Incense19_1.jpeg"
         ],
         "price": {
-            "actualPrice": "20",
-            "offerPrice": "17",
-            "offer": "15%"
+            "actualPrice": "110",
+            "offerPrice": "99",
+            "offer": "10%"
         },
         "actve": true,
         "sale": 4
     },
     {
         "id": "IN20",
-        "name": "Shikriti's Chandan Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Shikriti's Chandan Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "শিকৃতির চন্দন ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense20.jpeg",
         "images": [
             "/web/images/products/incenses/Incense20.jpeg",
@@ -361,9 +901,36 @@
     },
     {
         "id": "IN21",
-        "name": "Tilottama Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Tilottama Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "তিলোত্তমা ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "20 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ২০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense21.jpeg",
         "images": [
             "/web/images/products/incenses/Incense21.jpeg",
@@ -379,9 +946,36 @@
     },
     {
         "id": "IN22",
-        "name": "Shikriti Incense Sticks",
-        "description": "Premium sandalwood incense for meditation and relaxation",
-        "details": "100 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy",
+        "name": [
+            {
+                "key": "en",
+                "value": "Shikriti Incense Sticks"
+            },
+            {
+                "key": "be",
+                "value": "শিকৃতি ধূপের কাঠি"
+            }
+        ],
+        "description": [
+            {
+                "key": "en",
+                "value": "Premium sandalwood incense for meditation and relaxation"
+            },
+            {
+                "key": "be",
+                "value": "ধ্যান এবং বিশ্রামের জন্য প্রিমিয়াম চন্দন কাঠের ধূপ"
+            }
+        ],
+        "details": [
+            {
+                "key": "en",
+                "value": "100 Sticks of one packet.\n Organic, Non-Synthetic and Eco-friendly.\n Purify the air, updivft the Prayers.\n Designed for calm, chosen for Yoga.\n Exclusive long-lasting natural aroma that soothes your mind.\n We are part of your Yoga class, Aroma therapy"
+            },
+            {
+                "key": "be",
+                "value": "এক প্যাকেটে ১০০টি কাঠি।\n জৈব, অ-কৃত্রিম এবং পরিবেশ-বান্ধব।\n বাতাসকে বিশুদ্ধ করুন, প্রার্থনাকে উন্নত করুন।\n শান্ত থাকার জন্য ডিজাইন করা হয়েছে, যোগব্যায়ামের জন্য বেছে নেওয়া হয়েছে।\n একচেটিয়া দীর্ঘস্থায়ী প্রাকৃতিক সুবাস যা আপনার মনকে প্রশান্ত করে।\n আমরা আপনার যোগ ক্লাস, অ্যারোমা থেরাপির অংশ।"
+            }
+        ],
         "thumbnail": "/web/images/products/incenses/Incense22.jpeg",
         "images": [
             "/web/images/products/incenses/Incense22.jpeg",

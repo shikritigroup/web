@@ -15,6 +15,7 @@ export default function ProductCard({ item, type }) {
   const [t] = useTranslation();
   const theme = useTheme();
   const imageStretch = !useMediaQuery(theme.breakpoints.up("md"));
+  const lan = localStorage.getItem("userLanguage");
 
   return (
     <Grid
@@ -32,7 +33,7 @@ export default function ProductCard({ item, type }) {
         >
           <Box sx={{ textAlign: "center" }}>
             <img
-              alt={item.name}
+              alt={item.name.find((n) => n.key === lan).value}
               src={item.thumbnail}
               height="100px"
               style={{
@@ -41,7 +42,7 @@ export default function ProductCard({ item, type }) {
               }}
             ></img>
           </Box>
-          <Tooltip title={item.name + ". " + item.description}>
+          <Tooltip title={item.name.find((n) => n.key === lan).value + ". " + item.description.find((n) => n.key === lan).value}>
             <Box
               sx={{
                 textOverflow: "ellipsis",
@@ -51,7 +52,7 @@ export default function ProductCard({ item, type }) {
                 maxWidth: "98%",
               }}
             >
-              {item.name}
+              {item.name.find((n) => n.key === lan).value}
             </Box>
             <Box>
               <Typography

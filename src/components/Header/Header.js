@@ -160,7 +160,7 @@ function Header() {
               </FormControl>
             </Box>
             <Box>
-              <Tooltip title="Cart">
+              <Tooltip title={t("cart.header")}>
                 <Link
                   to={ROUTE_PATH.CART}
                   className="cart-icon"

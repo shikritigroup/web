@@ -3,8 +3,10 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API, ROUTE_PATH } from "../../helper/Constants";
+import { useTranslation } from "react-i18next";
 
 export default function Incenses() {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [searchText, setSearchText] = useState();
 
@@ -21,7 +23,7 @@ export default function Incenses() {
     <Box sx={{ padding: "10px", textAlign: "left" }}>
       <Box sx={{ padding: "40px 0", textAlign: "center", display: "flex", justifyContent: "center" }}>
         <FormControl>
-          <InputLabel htmlFor="search-text">Search</InputLabel>
+          <InputLabel htmlFor="search-text">{t("search")}</InputLabel>
           <Input id="search-text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         </FormControl>
       </Box>

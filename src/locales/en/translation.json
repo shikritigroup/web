@@ -4,7 +4,8 @@
     "english": "English",
     "more": "More",
     "off": " off",
-    "submit": "জমা",
+    "submit": "Submit",
+    "search": "Search",
     "menu.incenses": "Incenses",
     "menu.spices": "Spices",
     "menu.about": "About",
@@ -39,5 +40,6 @@
     "cart.order.no": "Order No",
     "cart.no-order-found": "No order found",
     "cart.checkout": "Checkout",
-    "checkout.place-order": "Place Order"
+    "checkout.place-order": "Place Order",
+    "product.details.title": "100% Natural & Pure by SHIKRITI GROUP"
 }

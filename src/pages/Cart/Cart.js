@@ -19,6 +19,8 @@ import { displayNo } from "../../helper/Number";
 
 export default function Cart() {
   const [t] = useTranslation();
+  const lan = localStorage.getItem("userLanguage");
+
   const [myOrder, setMyOrder] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
@@ -212,7 +214,7 @@ export default function Cart() {
                               size={{ lg: 6 }}
                               sx={{ padding: "5px", alignSelf: "center" }}
                             >
-                              {product.name}
+                              {product.name.find((n) => n.key === lan).value}
                             </Grid>
                             <Grid
                               size={{ lg: 4 }}
