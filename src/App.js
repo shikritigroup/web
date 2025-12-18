@@ -10,7 +10,7 @@ import Incenses from "./pages/Incenses/Incenses";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Terms from "./pages/Terms";
-import Checkout from "./pages/Checkout";
+import Checkout from "./pages/Checkout/Checkout";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import B2B from "./pages/B2B/B2B";

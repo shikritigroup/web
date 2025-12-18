@@ -3,8 +3,6 @@ import {
   Grid,
   Tooltip,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { ROUTE_PATH } from "../../helper/Constants";
@@ -13,8 +11,6 @@ import { useTranslation } from "react-i18next";
 
 export default function ProductCard({ item, type }) {
   const [t] = useTranslation();
-  const theme = useTheme();
-  const imageStretch = !useMediaQuery(theme.breakpoints.up("md"));
   const lan = localStorage.getItem("userLanguage");
 
   return (
@@ -38,7 +34,7 @@ export default function ProductCard({ item, type }) {
               height="100px"
               style={{
                 maxWidth: "100%",
-                width: imageStretch ? "100%" : "auto",
+                width: "auto",
               }}
             ></img>
           </Box>

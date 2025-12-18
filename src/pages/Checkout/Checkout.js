@@ -1,50 +1,30 @@
 import {
   Box,
   Button,
-  FormControl,
-  FormGroup,
   Grid,
-  Input,
-  InputLabel,
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { addToCart, getCart, removeFromCart } from "../../helper/OrderHelper";
+import { getCart } from "../../helper/OrderHelper";
 import { API, ROUTE_PATH } from "../../helper/Constants";
 import axios from "axios";
-import "./Cart.css";
+import "./Checkout.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
 
-export default function Cart() {
+export default function Checkout() {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
   const userAddress = JSON.parse(localStorage.getItem("userAddress"));
 
   const navigate = useNavigate();
 
-  const [myOrder, setMyOrder] = useState(getCart());
+  const [myOrder, ] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
 
-  const [fullName, setFullName] = useState(userAddress?.n);
-  const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
-  const [email, setEmail] = useState(userAddress?.e);
-  const [address, setAddress] = useState(userAddress?.a);
-  const [pin, setPin] = useState(userAddress?.p);
-
   const handleSubmit = () => {
-    localStorage.setItem(
-      "userAddress",
-      JSON.stringify({
-        n: fullName,
-        pn: phoneNumber,
-        e: email,
-        a: address,
-        p: pin,
-      })
-    );
     navigate("/" + ROUTE_PATH.CHECKOUT);
   };
 
@@ -60,29 +40,8 @@ export default function Cart() {
     setSpices(spicesRes.data);
   };
 
-  const increaseQuantity = (id, type) => {
-    addToCart(id, type);
-    setMyOrder(getCart());
-  };
-
-  const decreaseQuantity = (id, type) => {
-    removeFromCart(id, type);
-    setMyOrder(getCart());
-  };
-
   return (
     <Box sx={{ padding: "15px", textAlign: "left" }}>
-      <Typography
-        variant="h4"
-        sx={{
-          borderBottom: 1,
-          textAlign: "center",
-          padding: "10px 0",
-          borderColor: "#abababcc",
-        }}
-      >
-        {t("cart.header")}
-      </Typography>
       {myOrder?.items?.length > 0 && incenses?.length > 0 && spices?.length > 0 ? (
         <Box>
           <Typography variant="h5" sx={{ padding: "10px 0" }}>
@@ -94,71 +53,29 @@ export default function Cart() {
                 size={{ md: 4, xs: 12 }}
                 sx={{ padding: "10px 20px", border: "1px solid #80787869" }}
               >
-                <FormGroup>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="name">
-                      {t("b2b.fullname")} *
-                    </InputLabel>
-                    <Input
-                      required
-                      id="name"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      sx={{ width: "100%" }}
-                    />
-                  </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="phone">{t("b2b.phone")} *</InputLabel>
-                    <Input
-                      required
-                      id="phone"
-                      type="tel"
-                      value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value)}
-                      sx={{ width: "100%" }}
-                    />
-                  </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="email">{t("b2b.email")} *</InputLabel>
-                    <Input
-                      required
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      sx={{ width: "100%" }}
-                    />
-                  </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="address">
-                      {t("b2b.address")} *
-                    </InputLabel>
-                    <Input
-                      required
-                      id="address"
-                      value={address}
-                      sx={{ width: "100%" }}
-                      onChange={(e) => setAddress(e.target.value)}
-                    />
-                  </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="pin">{t("b2b.pin")} *</InputLabel>
-                    <Input
-                      required
-                      id="pin"
-                      value={pin}
-                      sx={{ width: "100%" }}
-                      onChange={(e) => setPin(e.target.value)}
-                    />
-                  </FormControl>
-                  <Button
-                    disabled={!fullName || !phoneNumber || !email || !pin}
-                    variant="contained"
-                    onClick={handleSubmit}
-                  >
-                    {t("cart.checkout")}
-                  </Button>
-                </FormGroup>
+                <Box>
+                  <b>{t("b2b.fullname")} :</b>
+                  {userAddress.n}
+                </Box>
+                <Box>
+                  <b>{t("b2b.phone")} :</b>
+                  {userAddress.pn}
+                </Box>
+                <Box>
+                  <b>{t("b2b.email")} :</b>
+                  {userAddress.e}
+                </Box>
+                <Box>
+                  <b>{t("b2b.address")} :</b>
+                  {userAddress.a}
+                </Box>
+                <Box>
+                  <b>{t("b2b.pin")} :</b>
+                  {userAddress.p}
+                </Box>
+                <Button variant="contained" onClick={handleSubmit}>
+                  {t("cart.checkout")}
+                </Button>
               </Grid>
               <Grid
                 size={{ md: 8, xs: 12 }}
@@ -208,7 +125,7 @@ export default function Cart() {
                               <img
                                 src={product.thumbnail}
                                 alt={product.thumbnail}
-                                className="cart-img"
+                                className="checkout-img"
                               ></img>
                             </Link>
                           </Grid>
@@ -274,37 +191,11 @@ export default function Cart() {
                                 alignItems: "center",
                               }}
                             >
-                              <Button
-                                sx={{
-                                  border: 1,
-                                  padding: "5px",
-                                  minWidth: "35px",
-                                  fontWeight: "bold",
-                                }}
-                                onClick={() =>
-                                  decreaseQuantity(product.id, item.type)
-                                }
-                              >
-                                -
-                              </Button>
                               <Typography
                                 sx={{ textAlign: "center", minWidth: "35px" }}
                               >
                                 {displayNo(item.count.toString())}
                               </Typography>
-                              <Button
-                                sx={{
-                                  border: 1,
-                                  padding: "5px",
-                                  minWidth: "35px",
-                                  fontWeight: "bold",
-                                }}
-                                onClick={() =>
-                                  increaseQuantity(product.id, item.type)
-                                }
-                              >
-                                +
-                              </Button>
                             </Grid>
                           </Grid>
                         </Grid>

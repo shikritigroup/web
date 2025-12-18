@@ -35,7 +35,7 @@ export default function ProductDetails() {
   };
 
   const handelAddToCart = () => {
-    addToCart(id, type);
+    addToCart(id, type, product.price.offerPrice);
     navigator("/" + ROUTE_PATH.CART);
   };
 
