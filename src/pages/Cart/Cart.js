@@ -85,7 +85,10 @@ export default function Cart() {
           </Typography>
           <Box sx={{ padding: "10px" }}>
             <Grid container>
-              <Grid size={{ md: 4, xs: 12 }} sx={{ padding: "5px" }}>
+              <Grid
+                size={{ md: 4, xs: 12 }}
+                sx={{ padding: "10px 20px", border: "1px solid #80787869" }}
+              >
                 <FormGroup>
                   <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
                     <InputLabel htmlFor="name">
@@ -148,11 +151,14 @@ export default function Cart() {
                     variant="contained"
                     onClick={handleSubmit}
                   >
-                    Place Order
+                    {t("cart.checkout")}
                   </Button>
                 </FormGroup>
               </Grid>
-              <Grid size={{ md: 8, xs: 12 }} sx={{ padding: "5px" }}>
+              <Grid
+                size={{ md: 8, xs: 12 }}
+                sx={{ padding: "10px 20px", border: "1px solid #80787869" }}
+              >
                 {myOrder.items
                   ?.sort((a, b) => a.order - b.order)
                   .map((item, index) => {
@@ -305,7 +311,9 @@ export default function Cart() {
           </Box>
         </Box>
       ) : (
-        <Box>No Order Found.</Box>
+        <Box sx={{ minHeight: "200px", display: "flex" }}>
+          <Box sx={{ margin: "auto" }}>{t("cart.no-order-found")}</Box>
+        </Box>
       )}
     </Box>
   );

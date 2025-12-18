@@ -69,11 +69,11 @@ export default function Contact() {
                         /{" "}
                       </Typography>
                     )}
-                    <Link
+                    <Link target="_blank"
                       to={
                         "https://wa.me/" +
                         whatsApp.replace(/\s/g, "") +
-                        "?text='https://shikritigroup.github.io/web/'"
+                        "?text=https://shikritigroup.github.io/web/"
                       }
                       about="_blank"
                     >

@@ -14,7 +14,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN2",
@@ -31,7 +32,8 @@
             "offerPrice": "19",
             "offer": "5%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN3",
@@ -48,7 +50,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN4",
@@ -65,7 +68,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN5",
@@ -82,7 +86,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN6",
@@ -99,7 +104,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN7",
@@ -116,7 +122,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN8",
@@ -133,7 +140,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN9",
@@ -150,7 +158,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN10",
@@ -167,7 +176,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN11",
@@ -184,7 +194,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN12",
@@ -201,7 +212,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN13",
@@ -218,7 +230,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN14",
@@ -235,7 +248,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN15",
@@ -252,7 +266,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN16",
@@ -269,7 +284,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     },
     {
         "id": "IN17",
@@ -286,7 +302,8 @@
             "offerPrice": "36",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 6
     },
     {
         "id": "IN18",
@@ -303,7 +320,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 5
     },
     {
         "id": "IN19",
@@ -320,7 +338,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 4
     },
     {
         "id": "IN20",
@@ -337,7 +356,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 3
     },
     {
         "id": "IN21",
@@ -354,7 +374,8 @@
             "offerPrice": "17",
             "offer": "15%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 2
     },
     {
         "id": "IN22",
@@ -371,6 +392,7 @@
             "offerPrice": "54",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 1
     }
 ]

@@ -11,7 +11,7 @@ export default function MostSales({ headerText, items, moreLink, type }) {
   const itemToDisplay = useMediaQuery(theme.breakpoints.up("lg")) ? 6 : 4;
 
   return (
-    items && (
+    items?.length > 0 && (
       <Box padding="5px">
         <Box textAlign="left" alignItems="flex-start" margin="0">
           <Typography variant="h5" margin="0">

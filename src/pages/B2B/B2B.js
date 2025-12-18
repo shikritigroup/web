@@ -143,7 +143,7 @@ export default function B2B() {
               variant="contained"
               onClick={handleSubmit}
             >
-              Submit
+              {t("submit")}
             </Button>
           </FormGroup>
         </Box>

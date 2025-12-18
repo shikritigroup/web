@@ -11,14 +11,23 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const [t] = useTranslation();
   const [lookups, setLookups] = useState({});
+  const [bestSaleIncenses, setBestSaleIncenses] = useState([]);
+  const [bestSaleSpices, setBestSaleSpices] = useState([]);
 
   useEffect(() => {
     loadLookups();
   }, []);
 
   const loadLookups = async () => {
-    const res = await axios.get(API.BASE + API.HOME_LOOKUPS);
-    setLookups(res.data);
+    const lookupPromise = axios.get(API.BASE + API.HOME_LOOKUPS);
+    const incensesPromise = axios.get(API.BASE + API.INCENSES);
+    const spicesPromise = axios.get(API.BASE + API.SPICES);
+
+    Promise.all([lookupPromise, incensesPromise, spicesPromise]).then((res) => {
+      setLookups(res[0].data);
+      setBestSaleIncenses(res[1].data.sort((a, b) => b.sale - a.sale));
+      setBestSaleSpices(res[2].data.sort((a, b) => b.sale - a.sale));
+    });
   };
 
   return (
@@ -69,13 +78,13 @@ export default function Home() {
       </Grid>
       <MostSales
         headerText={t("home.best.sale.incenses.header")}
-        items={lookups?.bestSaleIncenses}
+        items={bestSaleIncenses}
         moreLink={ROUTE_PATH.INCENSES}
         type={ROUTE_PATH.INCENSES}
       ></MostSales>
       <MostSales
         headerText={t("home.best.sale.spices.header")}
-        items={lookups?.bestSaleSpices}
+        items={bestSaleSpices}
         moreLink={ROUTE_PATH.SPICES}
         type={ROUTE_PATH.SPICES}
       ></MostSales>

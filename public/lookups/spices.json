@@ -14,7 +14,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 5
     },
     {
         "id": "SP2",
@@ -31,7 +32,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 4
     },
     {
         "id": "SP3",
@@ -48,7 +50,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 3
     },
     {
         "id": "SP4",
@@ -65,7 +68,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 2
     },
     {
         "id": "SP5",
@@ -82,7 +86,8 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 1
     },
     {
         "id": "SP6",
@@ -99,6 +104,7 @@
             "offerPrice": "18",
             "offer": "10%"
         },
-        "actve": true
+        "actve": true,
+        "sale": 0
     }
 ]
