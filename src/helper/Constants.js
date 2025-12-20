@@ -5,11 +5,12 @@ export const ROUTE_PATH = {
   CART: "cart",
   CHECKOUT: "checkout",
   TERMS: "terms",
-  SIGNUP: "signUP",
+  ADMIN: "admin",
   INCENSES: "incenses",
   SPICES: "spices",
   B2B: "b2b",
   PRODUCT_DETAILS: "product/Ddetails/",
+  WHATSAPP: "https://wa.me/",
 };
 
 export const API = {

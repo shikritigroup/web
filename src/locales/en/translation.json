@@ -6,6 +6,7 @@
     "off": " off",
     "submit": "Submit",
     "search": "Search",
+    "copy": "Copy",
     "menu.incenses": "Incenses",
     "menu.spices": "Spices",
     "menu.about": "About",
@@ -40,6 +41,9 @@
     "cart.total": "Total",
     "cart.no-order-found": "No order found",
     "cart.checkout": "Checkout",
+    "cart.desktop.order.instruction": "Kindly copy the content of the text box above and forward it to <WhatsAppNo /> on WhatsApp to complete your request.",
     "checkout.place-order": "Place Order",
-    "product.details.title": "100% Natural & Pure by SHIKRITI GROUP"
+    "product.details.title": "100% Natural & Pure by SHIKRITI GROUP",
+    "add-new-order.submit": "Add new order",
+    "admin.header": "SHIKRITI Admin"
 }

@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { API } from "../../helper/Constants";
+import { API, ROUTE_PATH } from "../../helper/Constants";
 import { useTranslation } from "react-i18next";
 
 export default function B2B() {
@@ -54,7 +54,11 @@ export default function B2B() {
       interest,
     };
     window.open(
-      "https://wa.me/" + contacts.b2b + "?text='" + JSON.stringify(obj) + "'",
+      ROUTE_PATH.WHATSAPP +
+        contacts.b2b +
+        "?text='" +
+        JSON.stringify(obj) +
+        "'",
       "_blank"
     );
   };

@@ -1,51 +1,94 @@
 import {
   Box,
   Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Grid,
+  IconButton,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getCart } from "../../helper/OrderHelper";
 import { API, ROUTE_PATH } from "../../helper/Constants";
 import axios from "axios";
 import "./Checkout.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
+import CloseIcon from "@mui/icons-material/Close";
+import { encode } from "@toon-format/toon";
 
 export default function Checkout() {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
   const userAddress = JSON.parse(localStorage.getItem("userAddress"));
 
-  const navigate = useNavigate();
-
-  const [myOrder, ] = useState(getCart());
+  const [myOrder] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
+  const [contacts, setContacts] = useState();
+
+  const [orderText, setOrderText] = useState("");
+  const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleSubmit = () => {
-    navigate("/" + ROUTE_PATH.CHECKOUT);
+    const obj = {
+      l: lan,
+      y: "O",
+      i: myOrder.items.map((item) => item.id + ":" + item.count),
+      n: userAddress.n,
+      h: userAddress.pn,
+      e: userAddress.e,
+      p: userAddress.p,
+      a: userAddress.a,
+    };
+    if (isDesktop) {
+      setOrderText(encode(obj));
+      setOpen(true);
+    } else {
+      window.open(
+        ROUTE_PATH.WHATSAPP + contacts.b2b + "?text='" + encode(obj) + "'",
+        "_blank"
+      );
+    }
+  };
+
+  const loadLookups = async () => {
+    const incensesRes = await axios.get(API.BASE + API.INCENSES);
+    const spicesRes = await axios.get(API.BASE + API.SPICES);
+    const contactRes = await axios.get(API.BASE + API.CONTACTS);
+
+    setIncenses(incensesRes?.data);
+    setSpices(spicesRes?.data);
+    setContacts(contactRes?.data);
   };
 
   useEffect(() => {
     loadLookups();
   }, []);
 
-  const loadLookups = async () => {
-    const incensesRes = await axios.get(API.BASE + API.INCENSES);
-    const spicesRes = await axios.get(API.BASE + API.SPICES);
-
-    setIncenses(incensesRes.data);
-    setSpices(spicesRes.data);
-  };
-
   return (
     <Box sx={{ padding: "15px", textAlign: "left" }}>
-      {myOrder?.items?.length > 0 && incenses?.length > 0 && spices?.length > 0 ? (
+      {myOrder?.items?.length > 0 &&
+      incenses?.length > 0 &&
+      spices?.length > 0 ? (
         <Box>
           <Typography variant="h5" sx={{ padding: "10px 0" }}>
-            {t("cart.total")}: ₹ {displayNo(myOrder.items.reduce((a,v) =>  a = a + (v.offerPrice * v.count) , 0 ).toFixed(2))}
+            {t("cart.total")}: ₹{" "}
+            {displayNo(
+              myOrder.items
+                .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
+                .toFixed(2)
+            )}
           </Typography>
           <Box sx={{ padding: "10px" }}>
             <Grid container>
@@ -211,6 +254,56 @@ export default function Checkout() {
           <Box sx={{ margin: "auto" }}>{t("cart.no-order-found")}</Box>
         </Box>
       )}
+
+      <Dialog onClose={handleClose} open={open} maxWidth="sm" fullWidth>
+        <DialogTitle>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h6" component="span">
+              {t("cart.checkout")}
+            </Typography>
+            <IconButton
+              aria-label="close"
+              onClick={handleClose}
+              sx={{
+                color: (theme) => theme.palette.grey[500],
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </div>
+        </DialogTitle>
+        <DialogContent dividers>
+          <Typography gutterBottom>
+            <Box sx={{ padding: "5px 0" }}>
+              <Button
+                variant="contained"
+                onClick={() => {
+                  navigator.clipboard.writeText(orderText);
+                }}
+              >
+                {t("copy")}
+              </Button>
+            </Box>
+            <textarea
+              style={{ padding: "5px", width: "100%", height: "100%" }}
+              readOnly
+              value={orderText}
+            ></textarea>
+            <Trans
+              i18nKey="cart.desktop.order.instruction"
+              components={{
+                WhatsAppNo: <span>{displayNo(contacts?.b2b)}</span>,
+              }}
+            ></Trans>
+          </Typography>
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 }

@@ -4,7 +4,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { API } from "../../helper/Constants";
+import { API, ROUTE_PATH } from "../../helper/Constants";
 import { useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
 import EmailIcon from "@mui/icons-material/Email";
@@ -69,10 +69,11 @@ export default function Contact() {
                         /{" "}
                       </Typography>
                     )}
-                    <Link target="_blank"
+                    <Link
+                      target="_blank"
                       to={
-                        "https://wa.me/" +
-                        whatsApp.replace(/\s/g, "") +
+                        ROUTE_PATH.WHATSAPP +
+                        +whatsApp.replace(/\s/g, "") +
                         "?text=https://shikritigroup.github.io/web/"
                       }
                       about="_blank"

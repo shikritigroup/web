@@ -4,7 +4,6 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Spices from "./pages/Spices/Spices";
-import SignUP from "./pages/SignUP";
 import Cart from "./pages/Cart/Cart";
 import Incenses from "./pages/Incenses/Incenses";
 import Header from "./components/Header/Header";
@@ -17,6 +16,7 @@ import B2B from "./pages/B2B/B2B";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import { ROUTE_PATH } from "./helper/Constants";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Admin from "./pages/Admin/Admin";
 
 const appTheme = createTheme({
   palette: {
@@ -58,8 +58,8 @@ function App() {
               element={<Terms />}
             />
             <Route
-              path={ROUTE_PATH.SIGNUP}
-              element={<SignUP />}
+              path={ROUTE_PATH.ADMIN}
+              element={<Admin />}
             />
             <Route
               path={ROUTE_PATH.INCENSES}
