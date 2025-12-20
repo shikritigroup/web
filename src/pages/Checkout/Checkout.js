@@ -41,22 +41,23 @@ export default function Checkout() {
   };
 
   const handleSubmit = () => {
-    const obj = {
-      l: lan,
-      y: "O",
+    const order = encode({
+      l: lan + ";",
+      y: "O;",
       i: myOrder.items.map((item) => item.id + ":" + item.count),
-      n: userAddress.n,
-      h: userAddress.pn,
-      e: userAddress.e,
-      p: userAddress.p,
+      ";n": userAddress.n + ";",
+      h: userAddress.pn + ";",
+      e: userAddress.e + ";",
+      p: userAddress.p + ";",
       a: userAddress.a,
-    };
+    });
+
     if (isDesktop) {
-      setOrderText(encode(obj));
+      setOrderText(order);
       setOpen(true);
     } else {
       window.open(
-        ROUTE_PATH.WHATSAPP + contacts.b2b + "?text='" + encode(obj) + "'",
+        ROUTE_PATH.WHATSAPP + contacts.b2b + "?text=" + order,
         "_blank"
       );
     }
@@ -158,7 +159,6 @@ export default function Checkout() {
                               to={
                                 "/" +
                                 ROUTE_PATH.PRODUCT_DETAILS +
-                                "/" +
                                 product.id +
                                 "/" +
                                 item.type
@@ -279,7 +279,7 @@ export default function Checkout() {
           </div>
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
+          <Box>
             <Box sx={{ padding: "5px 0" }}>
               <Button
                 variant="contained"
@@ -295,13 +295,15 @@ export default function Checkout() {
               readOnly
               value={orderText}
             ></textarea>
-            <Trans
-              i18nKey="cart.desktop.order.instruction"
-              components={{
-                WhatsAppNo: <span>{displayNo(contacts?.b2b)}</span>,
-              }}
-            ></Trans>
-          </Typography>
+            <Box>
+              <Trans
+                i18nKey="cart.desktop.order.instruction"
+                components={{
+                  WhatsAppNo: <span>{displayNo(contacts?.b2b)}</span>,
+                }}
+              ></Trans>
+            </Box>
+          </Box>
         </DialogContent>
       </Dialog>
     </Box>

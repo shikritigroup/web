@@ -1,54 +1,18 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormGroup,
-  Grid,
-  Input,
-  InputLabel,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { addToCart, getCart, removeFromCart } from "../../helper/OrderHelper";
-import { API, ROUTE_PATH } from "../../helper/Constants";
+import { API } from "../../helper/Constants";
 import axios from "axios";
 import "./Admin.css";
-import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { displayNo } from "../../helper/Number";
 import AddOrder from "./AddOrder/AddOrder";
+import { decode } from "@toon-format/toon";
 
 export default function Admin() {
   const [t] = useTranslation();
-  const lan = localStorage.getItem("userLanguage");
-  const userAddress = JSON.parse(localStorage.getItem("userAddress"));
-
-  const navigate = useNavigate();
-
-  const [myOrder, setMyOrder] = useState(getCart());
-  const [incenses, setIncenses] = useState([]);
-  const [spices, setSpices] = useState([]);
+  const [incenses, setIncenses] = useState();
+  const [spices, setSpices] = useState();
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [fullName, setFullName] = useState(userAddress?.n);
-  const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
-  const [email, setEmail] = useState(userAddress?.e);
-  const [address, setAddress] = useState(userAddress?.a);
-  const [pin, setPin] = useState(userAddress?.p);
-
-  const handleSubmit = () => {
-    localStorage.setItem(
-      "userAddress",
-      JSON.stringify({
-        n: fullName,
-        pn: phoneNumber,
-        e: email,
-        a: address,
-        p: pin,
-      })
-    );
-    navigate("/" + ROUTE_PATH.CHECKOUT);
-  };
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     loadLookups();
@@ -62,17 +26,17 @@ export default function Admin() {
     setSpices(spicesRes.data);
   };
 
-  const increaseQuantity = (id, type) => {
-    addToCart(id, type);
-    setMyOrder(getCart());
+  const addNewOrder = (orderText) => {
+    try {
+      setErrorMessage("");
+      setOrders([
+        decode(orderText.replaceAll('";n"', "\nn").replaceAll(";", "\n")),
+        ...orders,
+      ]);
+    } catch {
+      setErrorMessage("admin.invalid-order");
+    }
   };
-
-  const decreaseQuantity = (id, type) => {
-    removeFromCart(id, type);
-    setMyOrder(getCart());
-  };
-
-  const addNewOrder = (orderText) => {};
 
   return (
     <Box sx={{ padding: "15px", textAlign: "left" }}>
@@ -88,12 +52,14 @@ export default function Admin() {
         {t("admin.header")}
       </Typography>
       <Grid container>
-        <Box sx={{ color: "#ff0000ff", padding: "5px" }}>{errorMessage}</Box>
         <Grid sx={{ padding: "5px" }} size={{ xs: 12, md: 6 }}>
+          <Box sx={{ color: "#ff0000ff", padding: "5px" }}>
+            {t(errorMessage)}
+          </Box>
           <AddOrder addNewOrder={addNewOrder}></AddOrder>
         </Grid>
         <Grid sx={{ padding: "5px" }} size={{ xs: 12, md: 6 }}>
-          
+          {JSON.stringify(orders)}
         </Grid>
       </Grid>
     </Box>

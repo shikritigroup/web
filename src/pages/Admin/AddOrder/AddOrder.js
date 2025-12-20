@@ -22,6 +22,7 @@ export default function AddOrder({ addNewOrder }) {
         variant="contained"
         onClick={() => {
           addNewOrder(orderText);
+          setOrderText("");
         }}
       >
         {t("add-new-order.submit")}

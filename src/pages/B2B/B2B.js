@@ -46,12 +46,12 @@ export default function B2B() {
 
   const handleSubmit = () => {
     const obj = {
-      type: "B2B",
-      fullName,
-      phoneNumber,
-      email,
-      pin,
-      interest,
+      t: "B2B",
+      n: fullName,
+      h: phoneNumber,
+      e: email,
+      p: pin,
+      i: interest,
     };
     window.open(
       ROUTE_PATH.WHATSAPP +
