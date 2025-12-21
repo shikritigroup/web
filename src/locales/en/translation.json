@@ -45,5 +45,12 @@
     "checkout.place-order": "Place Order",
     "product.details.title": "100% Natural & Pure by SHIKRITI GROUP",
     "add-new-order.submit": "Add new order",
-    "admin.header": "SHIKRITI Admin"
+    "admin.header": "SHIKRITI Admin",
+    "admin.invalid-order": "Invalid order text",
+    "admin.orderNo": "Order No",
+    "admin.phone": "Phone",
+    "admin.items": "Items",
+    "admin.quant": "Quant",
+    "admin.total": "Total",
+    "admin.view": "View"
 }

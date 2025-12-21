@@ -15,7 +15,7 @@ export const displayNo = (text) => {
 
   if (text && lan === "be") {
     digits.forEach((digit) => {
-      text = text.replaceAll(digit.key, digit.value);
+      text = text.toString().replaceAll(digit.key, digit.value);
     });
   }
   return text;
