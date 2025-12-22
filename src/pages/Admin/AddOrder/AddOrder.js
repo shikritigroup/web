@@ -25,7 +25,7 @@ export default function AddOrder({ addNewOrder }) {
           setOrderText("");
         }}
       >
-        {t("add-new-order.submit")}
+        {t("admin.add-new-order.submit")}
       </Button>
     </Box>
   );

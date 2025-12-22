@@ -44,7 +44,7 @@
     "cart.desktop.order.instruction": "Kindly copy the content of the text box above and forward it to <WhatsAppNo /> on WhatsApp to complete your request.",
     "checkout.place-order": "Place Order",
     "product.details.title": "100% Natural & Pure by SHIKRITI GROUP",
-    "add-new-order.submit": "Add new order",
+    "admin.add-new-order.submit": "Add new order",
     "admin.header": "SHIKRITI Admin",
     "admin.invalid-order": "Invalid order text",
     "admin.orderNo": "Order No",
