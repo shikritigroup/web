@@ -4,18 +4,15 @@ import { displayNo } from "../../../helper/Number";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { API } from "../../../helper/Constants";
+import { API, ROUTE_PATH } from "../../../helper/Constants";
 import { decode } from "@toon-format/toon";
 
-const OrderGrid = ({ handleOpen }) => {
+const OrderGrid = ({ handleOpen, orders, setOrders }) => {
   const [t] = useTranslation();
   const theme = useTheme();
   const [incenses, setIncenses] = useState();
   const [spices, setSpices] = useState();
   const [errorMessage, setErrorMessage] = useState("");
-  const [orders, setOrders] = useState(
-    JSON.parse(localStorage.getItem("orders")) ?? []
-  );
 
   const hideInMobile = {
     [theme.breakpoints.up("xs")]: {
@@ -66,9 +63,13 @@ const OrderGrid = ({ handleOpen }) => {
           if (product) {
             return {
               id: product.id,
-              quantity: details[1],
+              type: details[0].startsWith("IN")
+                ? ROUTE_PATH.INCENSES
+                : ROUTE_PATH.SPICES,
+              count: details[1],
               name: product.name,
               price: product.price,
+              thumbnail: product.thumbnail,
             };
           } else {
             return undefined;
@@ -158,7 +159,7 @@ const OrderGrid = ({ handleOpen }) => {
             <Grid size={{ sm: 1, xs: 1 }}>
               {displayNo(
                 order?.items
-                  ?.map((item) => Number(item.quantity))
+                  ?.map((item) => Number(item.count))
                   .reduce(
                     (accumulator, currentValue) => accumulator + currentValue,
                     0

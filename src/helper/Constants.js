@@ -5,7 +5,7 @@ export const ROUTE_PATH = {
   CART: "cart",
   CHECKOUT: "checkout",
   TERMS: "terms",
-  ADMIN: "admin",
+  ADMIN: "plus",
   INCENSES: "incenses",
   SPICES: "spices",
   B2B: "b2b",

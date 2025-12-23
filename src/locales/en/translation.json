@@ -52,5 +52,6 @@
     "admin.items": "Items",
     "admin.quant": "Quant",
     "admin.total": "Total",
-    "admin.view": "View"
+    "admin.view": "View",
+    "order-details.head": "Order Details"
 }

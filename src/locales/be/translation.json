@@ -45,12 +45,13 @@
     "checkout.place-order": "অর্ডার করুন",
     "product.details.title": "শিক্রিতি গ্রুপ দ্বারা ১০০% প্রাকৃতিক ও বিশুদ্ধ",
     "admin.add-new-order.submit": "নতুন অর্ডার যোগ করুন",
-    "admin.header": "শিক্রিতি অ্যাডমিন",
+    "admin.header": "শিক্রিতি প্লাস",
     "admin.invalid-order": "অবৈধ অর্ডার পাঠ্য",
     "admin.orderNo": "অর্ডার নং",
     "admin.phone": "ফোন",
     "admin.items": "পদ",
     "admin.quant": "পরিমাণ",
     "admin.total": "মোট",
-    "admin.view": "দেখুন"
+    "admin.view": "দেখুন",
+    "order-details.head": "অর্ডারের বিবরণ"
 }
