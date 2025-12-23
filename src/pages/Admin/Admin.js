@@ -22,6 +22,48 @@ export default function Admin() {
     setOpen(true);
   };
 
+  const increaseQuantity = (itemId, order) => {
+    let item = order.items.filter((item) => item.id === itemId)[0];
+    item = { ...item, count: Number(item.count) + 1 };
+    let updatedOrder = { ...order };
+    updatedOrder.items = [
+      ...order.items.filter((item) => item.id !== itemId),
+      ...[item],
+    ];
+    const updatedOrders = [
+      ...orders?.filter((ord) => ord.orderNo !== selectedOrderNo),
+      ...[updatedOrder],
+    ];
+    setOrders(updatedOrders);
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+  };
+
+  const decreaseQuantity = (itemId, order) => {
+    let item = order.items.filter((item) => item.id === itemId)[0];
+    let updatedOrder = { ...order };
+    if (item.count === 1) {
+      updatedOrder.items = [
+        ...order.items.filter((item) => item.id !== itemId),
+      ];
+    } else {
+      item = { ...item, count: Number(item.count) - 1 };
+      updatedOrder.items = [
+        ...order.items.filter((item) => item.id !== itemId),
+        ...[item],
+      ];
+    }
+    let updatedOrders = [
+      ...orders?.filter((ord) => ord.orderNo !== selectedOrderNo),
+    ];
+
+    if (updatedOrder.items.length > 0) {
+      updatedOrders = [...updatedOrders, ...[updatedOrder]];
+    }
+
+    setOrders(updatedOrders);
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+  };
+
   return (
     <Box sx={{ padding: "15px", textAlign: "left" }}>
       <Typography
@@ -44,6 +86,8 @@ export default function Admin() {
         open={open}
         handleClose={handleClose}
         order={orders?.filter((ord) => ord.orderNo === selectedOrderNo)[0]}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
       ></OrderDetails>
     </Box>
   );

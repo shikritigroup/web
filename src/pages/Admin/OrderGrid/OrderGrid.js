@@ -53,7 +53,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
       );
 
       if (order?.i?.length > 0 && order?.y?.toLowerCase() === "o") {
-        const items = order?.i?.map((itm) => {
+        const items = order?.i?.map((itm, index) => {
           const details = itm.split(":");
 
           const product = details[0].startsWith("IN")
@@ -70,6 +70,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
               name: product.name,
               price: product.price,
               thumbnail: product.thumbnail,
+              order: index + 1,
             };
           } else {
             return undefined;
@@ -84,6 +85,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
           phone: order.h,
           items,
           ...{ orderNo: Date.now() },
+          order: orders.length + 1,
         };
 
         setOrders([newOrder, ...orders]);
@@ -123,81 +125,84 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
             {t("admin.total")}
           </Grid>
         </Grid>
-        {orders?.map((order, index) => (
-          <Grid
-            container
-            key={"order_" + index}
-            sx={{ padding: 1, textAlign: "center" }}
-          >
-            <Grid size={{ sm: 2, xs: 0 }} sx={hideInMobile}>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  handleOpen(order?.orderNo);
-                }}
-              >
-                {t("admin.view")}
-              </Button>
-            </Grid>
-            <Grid size={{ sm: 0, xs: 3 }} sx={hideInOthers}>
-              {t("admin.orderNo")}:
-            </Grid>
-            <Grid size={{ sm: 3, xs: 9 }}>{displayNo(order?.orderNo)}</Grid>
-            <Grid size={{ sm: 0, xs: 3 }} sx={hideInOthers}>
-              {t("admin.phone")}:
-            </Grid>
-            <Grid size={{ sm: 3, xs: 9 }}>{displayNo(order?.phone)}</Grid>
-            <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
-              {t("admin.items")}:
-            </Grid>
-            <Grid size={{ sm: 1, xs: 1 }}>
-              {displayNo(order?.items?.length)}
-            </Grid>
-            <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
-              {t("admin.quant")}:
-            </Grid>
-            <Grid size={{ sm: 1, xs: 1 }}>
-              {displayNo(
-                order?.items
-                  ?.map((item) => Number(item.count))
-                  .reduce(
-                    (accumulator, currentValue) => accumulator + currentValue,
-                    0
-                  )
-              )}
-            </Grid>
-            <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
-              {t("admin.total")}:
-            </Grid>
-            <Grid size={{ sm: 2, xs: 3 }} sx={{ textAlign: "right" }}>
-              <Typography
-                variant="caption"
-                sx={{ fontWeight: "bold", padding: "0 3px" }}
-              >
-                ₹
+        {orders
+          ?.sort((a, b) => b.order - a.order)
+          ?.map((order, index) => (
+            <Grid
+              container
+              key={"order_" + index}
+              sx={{ padding: 1, textAlign: "center" }}
+            >
+              <Grid size={{ sm: 2, xs: 0 }} sx={hideInMobile}>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    handleOpen(order?.orderNo);
+                  }}
+                >
+                  {t("admin.view")}
+                </Button>
+              </Grid>
+              <Grid size={{ sm: 0, xs: 3 }} sx={hideInOthers}>
+                {t("admin.orderNo")}:
+              </Grid>
+              <Grid size={{ sm: 3, xs: 9 }}>{displayNo(order?.orderNo)}</Grid>
+              <Grid size={{ sm: 0, xs: 3 }} sx={hideInOthers}>
+                {t("admin.phone")}:
+              </Grid>
+              <Grid size={{ sm: 3, xs: 9 }}>{displayNo(order?.phone)}</Grid>
+              <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
+                {t("admin.items")}:
+              </Grid>
+              <Grid size={{ sm: 1, xs: 1 }}>
+                {displayNo(order?.items?.length)}
+              </Grid>
+              <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
+                {t("admin.quant")}:
+              </Grid>
+              <Grid size={{ sm: 1, xs: 1 }}>
                 {displayNo(
                   order?.items
-                    ?.map((item) => Number(item.price.offerPrice))
+                    ?.map((item) => Number(item.count))
                     .reduce(
                       (accumulator, currentValue) => accumulator + currentValue,
                       0
                     )
-                    .toFixed(2)
                 )}
-              </Typography>
+              </Grid>
+              <Grid size={{ sm: 0, xs: 2 }} sx={hideInOthers}>
+                {t("admin.total")}:
+              </Grid>
+              <Grid size={{ sm: 2, xs: 3 }} sx={{ textAlign: "right" }}>
+                <Typography
+                  variant="caption"
+                  sx={{ fontWeight: "bold", padding: "0 3px" }}
+                >
+                  ₹
+                  {displayNo(
+                    order?.items
+                      ?.map((item) => Number(item.price.offerPrice))
+                      .reduce(
+                        (accumulator, currentValue) =>
+                          accumulator + currentValue,
+                        0
+                      )
+                      .toFixed(2)
+                  )}
+                </Typography>
+              </Grid>
+              <Grid size={{ sm: 2, xs: 3 }} sx={hideInOthers}>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    handleOpen(order?.orderNo);
+                  }}
+                >
+                  {t("admin.view")}
+                </Button>
+              </Grid>
             </Grid>
-            <Grid size={{ sm: 2, xs: 3 }} sx={hideInOthers}>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  handleOpen(order?.orderNo);
-                }}
-              >
-                {t("admin.view")}
-              </Button>
-            </Grid>
-          </Grid>
-        ))}
+          ))}
       </Grid>
     </Grid>
   );

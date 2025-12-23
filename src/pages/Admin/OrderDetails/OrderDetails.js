@@ -48,9 +48,18 @@ const OrderDetails = ({
           </IconButton>
         </div>
       </DialogTitle>
-      <DialogContent dividers>
-        <Box>
-          <Grid container>
+      <DialogContent dividers sx={{ padding: 1 }}>
+        {" "}
+        <Typography variant="h5" sx={{ padding: "10px 0" }}>
+          {t("cart.total")}: ₹{" "}
+          {displayNo(
+            order?.items
+              ?.reduce((a, v) => (a = a + v.price.offerPrice * v.count), 0)
+              .toFixed(2)
+          )}
+        </Typography>
+        <Box sx={{ padding: 0 }}>
+          <Grid container sx={{ padding: 0 }}>
             <Grid size={{ md: 6 }} sx={{ padding: 1 }}>
               <Grid
                 size={{ xs: 12 }}
@@ -98,15 +107,41 @@ const OrderDetails = ({
                           </Grid>
                           <Grid size={{ md: 10, xs: 8 }} container>
                             <Grid
-                              size={{ lg: 5 }}
+                              size={{ lg: 4 }}
                               sx={{ padding: "5px", alignSelf: "center" }}
                             >
                               {item.name.find((n) => n.key === lan).value}
                             </Grid>
                             <Grid
-                              size={{ lg: 4 }}
+                              size={{ lg: 5 }}
                               sx={{ padding: "5px", alignSelf: "center" }}
                             >
+                              <Typography
+                                variant="caption"
+                                sx={{
+                                  fontWeight: "bold",
+                                  padding: "0 3px",
+                                  fontSize: "15px",
+                                }}
+                              >
+                                ₹
+                                {displayNo(
+                                  Number(item.price.offerPrice).toFixed(2)
+                                )}
+                              </Typography>
+                              <Typography
+                                variant="caption"
+                                sx={{
+                                  textDecoration: "line-through",
+                                  color: "#888888ff",
+                                }}
+                              >
+                                ₹
+                                {displayNo(
+                                  Number(item.price.actualPrice).toFixed(2)
+                                )}
+                              </Typography>
+                              <br />
                               <Typography
                                 variant="caption"
                                 sx={{
@@ -165,9 +200,7 @@ const OrderDetails = ({
                                   minWidth: "35px",
                                   fontWeight: "bold",
                                 }}
-                                onClick={() =>
-                                  decreaseQuantity(item.id, item.type)
-                                }
+                                onClick={() => decreaseQuantity(item.id, order)}
                               >
                                 -
                               </Button>
@@ -183,9 +216,7 @@ const OrderDetails = ({
                                   minWidth: "35px",
                                   fontWeight: "bold",
                                 }}
-                                onClick={() =>
-                                  increaseQuantity(item.id, item.type)
-                                }
+                                onClick={() => increaseQuantity(item.id, order)}
                               >
                                 +
                               </Button>
@@ -197,8 +228,18 @@ const OrderDetails = ({
                   })}
               </Grid>
             </Grid>
-            <Grid size={{ md: 3 }} sx={{ padding: 1 }}></Grid>
-            <Grid size={{ md: 3 }} sx={{ padding: 1 }}></Grid>
+            <Grid size={{ md: 3 }} sx={{ padding: 1 }}>
+              <Grid
+                size={{ xs: 12 }}
+                sx={{ padding: "5px", border: "1px solid #80787869" }}
+              ></Grid>
+            </Grid>
+            <Grid size={{ md: 3 }} sx={{ padding: 1 }}>
+              <Grid
+                size={{ xs: 12 }}
+                sx={{ padding: "5px", border: "1px solid #80787869" }}
+              ></Grid>
+            </Grid>
           </Grid>
         </Box>
       </DialogContent>
