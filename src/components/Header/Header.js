@@ -45,7 +45,7 @@ function Header() {
     setLangauge(langauge);
     i18n.changeLanguage(langauge);
     document.title = t("title");
-  }, [langauge, i18n]);
+  }, [langauge, i18n, t]);
 
   return (
     <Slide

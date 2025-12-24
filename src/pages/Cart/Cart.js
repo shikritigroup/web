@@ -31,9 +31,7 @@ export default function Cart() {
 
   const [fullName, setFullName] = useState(userAddress?.n);
   const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
-  const [email, setEmail] = useState(userAddress?.e);
   const [address, setAddress] = useState(userAddress?.a);
-  const [pin, setPin] = useState(userAddress?.p);
 
   const handleSubmit = () => {
     localStorage.setItem(
@@ -41,9 +39,7 @@ export default function Cart() {
       JSON.stringify({
         n: fullName,
         pn: phoneNumber,
-        e: email,
         a: address,
-        p: pin,
       })
     );
     navigate("/" + ROUTE_PATH.CHECKOUT);
@@ -149,17 +145,6 @@ export default function Cart() {
                     />
                   </FormControl>
                   <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="email">{t("b2b.email")} *</InputLabel>
-                    <Input
-                      required
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      sx={{ width: "100%" }}
-                    />
-                  </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
                     <InputLabel htmlFor="address">
                       {t("b2b.address")} *
                     </InputLabel>
@@ -171,18 +156,8 @@ export default function Cart() {
                       onChange={(e) => setAddress(e.target.value)}
                     />
                   </FormControl>
-                  <FormControl sx={{ display: "block", paddingBottom: "15px" }}>
-                    <InputLabel htmlFor="pin">{t("b2b.pin")} *</InputLabel>
-                    <Input
-                      required
-                      id="pin"
-                      value={pin}
-                      sx={{ width: "100%" }}
-                      onChange={(e) => setPin(e.target.value)}
-                    />
-                  </FormControl>
                   <Button
-                    disabled={!fullName || !phoneNumber || !email || !pin}
+                    disabled={!fullName || !phoneNumber || !address}
                     variant="contained"
                     onClick={handleSubmit}
                   >

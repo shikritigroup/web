@@ -4,8 +4,12 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
+  FormControl,
+  FormGroup,
   Grid,
   IconButton,
+  Input,
+  InputLabel,
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -28,6 +32,9 @@ const OrderDetails = ({
   const lan = localStorage.getItem("userLanguage");
   const [upiLink, setUpiLink] = useState();
   const [contacts, setContacts] = useState();
+  const [fullName, setFullName] = useState(order?.customerName);
+  const [phoneNumber, setPhoneNumber] = useState(order?.phone);
+  const [address, setAddress] = useState(order?.address);
 
   useEffect(() => {
     const total =
@@ -38,11 +45,11 @@ const OrderDetails = ({
     if (total > 0) {
       setUpiLink(
         `upi://pay?pa=${encodeURIComponent(
-          contacts.upiId
-        )}&pn=${encodeURIComponent(contacts.upiName)}&am=${encodeURIComponent(
+          contacts?.upiId
+        )}&pn=${encodeURIComponent(contacts?.upiName)}&am=${encodeURIComponent(
           total
         )}&cu=${encodeURIComponent(
-          contacts.upiCurrency
+          contacts?.upiCurrency
         )}&tn=${encodeURIComponent(order?.orderNo)}`
       );
     } else {
@@ -58,6 +65,8 @@ const OrderDetails = ({
     const resContact = await axios.get(API.BASE + API.CONTACTS);
     setContacts(resContact.data);
   };
+
+  const handleSubmit = () => {};
 
   return (
     <Dialog onClose={handleClose} open={open} maxWidth="lg" fullWidth>
@@ -135,7 +144,123 @@ const OrderDetails = ({
             </Grid>
             <Box sx={{ padding: 0 }}>
               <Grid container sx={{ padding: 0 }}>
-                <Grid size={{ lg: 6 }} sx={{ padding: 1 }}>
+                <Grid
+                  size={{ lg: 2, md: 4, sm: 6, xs: 12 }}
+                  sx={{ padding: 1 }}
+                >
+                  <Grid
+                    size={{ xs: 12 }}
+                    sx={{ padding: "5px", border: "1px solid #80787869" }}
+                  >
+                    <Box
+                      style={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "5px",
+                      }}
+                    >
+                      {upiLink && (
+                        <QRCode
+                          value={upiLink}
+                          size={150}
+                          viewBox={`0 0 150 150`}
+                        />
+                      )}
+                    </Box>
+                    <Box style={{ textAlign: "center" }}>
+                      <Box>{t("order-details.payment.text")}</Box>
+                      <img
+                        src="./images/Gpay.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/Paytm.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/PhonePe.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/UPI.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Grid
+                  size={{ lg: 4, md: 8, sm: 6, xs: 12 }}
+                  sx={{ padding: 1 }}
+                >
+                  <Grid
+                    size={{ xs: 12 }}
+                    sx={{ padding: "10px 5px", border: "1px solid #80787869" }}
+                  >
+                    <FormGroup>
+                      <FormControl
+                        sx={{ display: "block", paddingBottom: "15px" }}
+                      >
+                        <InputLabel htmlFor="name">
+                          {t("b2b.fullname")} *
+                        </InputLabel>
+                        <Input
+                          required
+                          id="name"
+                          value={fullName}
+                          onChange={(e) => setFullName(e.target.value)}
+                          sx={{ width: "100%" }}
+                        />
+                      </FormControl>
+                      <FormControl
+                        sx={{ display: "block", paddingBottom: "15px" }}
+                      >
+                        <InputLabel htmlFor="phone">
+                          {t("b2b.phone")} *
+                        </InputLabel>
+                        <Input
+                          required
+                          id="phone"
+                          type="tel"
+                          value={phoneNumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                          sx={{ width: "100%" }}
+                        />
+                      </FormControl>
+                      <FormControl
+                        sx={{ display: "block", paddingBottom: "15px" }}
+                      >
+                        <InputLabel htmlFor="address">
+                          {t("b2b.address")} *
+                        </InputLabel>
+                        <Input
+                          required
+                          id="address"
+                          value={address}
+                          sx={{ width: "100%" }}
+                          onChange={(e) => setAddress(e.target.value)}
+                        />
+                      </FormControl>
+                      <Button
+                        disabled={!fullName || !phoneNumber || !address}
+                        variant="contained"
+                        onClick={handleSubmit}
+                      >
+                        {t("admin.save")}
+                      </Button>
+                    </FormGroup>
+                  </Grid>
+                </Grid>
+                <Grid size={{ lg: 6, xs: 12 }} sx={{ padding: 1 }}>
                   <Grid
                     size={{ xs: 12 }}
                     sx={{ padding: "5px", border: "1px solid #80787869" }}
@@ -182,13 +307,13 @@ const OrderDetails = ({
                               </Grid>
                               <Grid size={{ md: 10, xs: 8 }} container>
                                 <Grid
-                                  size={{ lg: 4 }}
+                                  size={{ sm: 4 }}
                                   sx={{ padding: "5px", alignSelf: "center" }}
                                 >
                                   {item.name.find((n) => n.key === lan).value}
                                 </Grid>
                                 <Grid
-                                  size={{ lg: 5 }}
+                                  size={{ sm: 4 }}
                                   sx={{ padding: "5px", alignSelf: "center" }}
                                 >
                                   <Typography
@@ -246,6 +371,7 @@ const OrderDetails = ({
                                       ).toFixed(2)
                                     )}
                                   </Typography>
+                                  <br />
                                   <Typography
                                     variant="caption"
                                     sx={{
@@ -259,12 +385,11 @@ const OrderDetails = ({
                                   </Typography>
                                 </Grid>
                                 <Grid
-                                  size={{ lg: 3 }}
+                                  size={{ sm: 4 }}
                                   sx={{
                                     padding: "5px",
-                                    alignSelf: "center",
                                     display: "flex",
-                                    justifySelf: "center",
+                                    justifyContent: "right",
                                     alignItems: "center",
                                   }}
                                 >
@@ -309,63 +434,6 @@ const OrderDetails = ({
                         );
                       })}
                   </Grid>
-                </Grid>
-                <Grid size={{ lg: 2 }} sx={{ padding: 1 }}>
-                  <Grid
-                    size={{ xs: 12 }}
-                    sx={{ padding: "5px", border: "1px solid #80787869" }}
-                  >
-                    <Box
-                      style={{
-                        background: "white",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        padding: "5px",
-                      }}
-                    >
-                      {upiLink && (
-                        <QRCode
-                          value={upiLink}
-                          size={150}
-                          viewBox={`0 0 150 150`}
-                        />
-                      )}
-                    </Box>
-                    <Box style={{ textAlign: "center" }}>
-                      <Box>{t("order-details.payment.text")}</Box>
-                      <img
-                        src="./images/Gpay.svg"
-                        alt="gpay"
-                        height="15px"
-                        style={{ padding: "2px" }}
-                      />
-                      <img
-                        src="./images/Paytm.svg"
-                        alt="gpay"
-                        height="15px"
-                        style={{ padding: "2px" }}
-                      />
-                      <img
-                        src="./images/PhonePe.svg"
-                        alt="gpay"
-                        height="15px"
-                        style={{ padding: "2px" }}
-                      />
-                      <img
-                        src="./images/UPI.svg"
-                        alt="gpay"
-                        height="15px"
-                        style={{ padding: "2px" }}
-                      />
-                    </Box>
-                  </Grid>
-                </Grid>
-                <Grid size={{ lg: 4 }} sx={{ padding: 1 }}>
-                  <Grid
-                    size={{ xs: 12 }}
-                    sx={{ padding: "5px", border: "1px solid #80787869" }}
-                  ></Grid>
                 </Grid>
               </Grid>
             </Box>

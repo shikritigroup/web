@@ -82,13 +82,15 @@ export default function Admin() {
         orders={orders}
         setOrders={setOrders}
       ></OrderGrid>
-      <OrderDetails
-        open={open}
-        handleClose={handleClose}
-        order={orders?.filter((ord) => ord.orderNo === selectedOrderNo)[0]}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-      ></OrderDetails>
+      {selectedOrderNo && (
+        <OrderDetails
+          open={open}
+          handleClose={handleClose}
+          order={orders?.filter((ord) => ord.orderNo === selectedOrderNo)[0]}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+        ></OrderDetails>
+      )}
     </Box>
   );
 }
