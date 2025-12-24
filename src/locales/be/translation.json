@@ -57,5 +57,6 @@
     "admin.quant": "পরিমাণ",
     "admin.total": "মোট",
     "admin.view": "দেখুন",
-    "order-details.head": "অর্ডারের বিবরণ"
+    "order-details.head": "অর্ডারের বিবরণ",
+    "order-details.payment.text": "ব্যবহার করে কোডটি স্ক্যান করুন"
 }

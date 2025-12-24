@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.css-1cennmq-MuiBackdrop-root-MuiDialog-backdrop {
+  height: 100vh;
+}
+
+.MuiDialog-container {
+  height: 100vh !important;
+}
+
 @media (min-width: 800px) {
   .app-container {
     min-height: calc(100vh - 150px);

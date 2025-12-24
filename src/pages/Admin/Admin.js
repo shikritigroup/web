@@ -41,7 +41,7 @@ export default function Admin() {
   const decreaseQuantity = (itemId, order) => {
     let item = order.items.filter((item) => item.id === itemId)[0];
     let updatedOrder = { ...order };
-    if (item.count === 1) {
+    if (item.count <= 1) {
       updatedOrder.items = [
         ...order.items.filter((item) => item.id !== itemId),
       ];

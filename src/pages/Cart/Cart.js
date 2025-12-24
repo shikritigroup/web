@@ -90,7 +90,7 @@ export default function Cart() {
       incenses?.length > 0 &&
       spices?.length > 0 ? (
         <Box>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Grid container sx={{ alignItems: "center" }}>
             <Typography
               variant="h5"
               sx={{ padding: "10px 20px 10px 0", fontWeight: "bold" }}
@@ -117,7 +117,7 @@ export default function Cart() {
                   .toFixed(2)
               )}
             </Typography>
-          </Box>
+          </Grid>
           <Box sx={{ padding: "10px" }}>
             <Grid container>
               <Grid

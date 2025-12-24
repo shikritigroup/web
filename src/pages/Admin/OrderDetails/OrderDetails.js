@@ -11,10 +11,11 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { ROUTE_PATH } from "../../../helper/Constants";
+import { API, ROUTE_PATH } from "../../../helper/Constants";
 import { displayNo } from "../../../helper/Number";
 import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const OrderDetails = ({
   open,
@@ -26,34 +27,43 @@ const OrderDetails = ({
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
   const [upiLink, setUpiLink] = useState();
-  const [orderTotal, setOrderTotal] = useState(0);
+  const [contacts, setContacts] = useState();
 
   useEffect(() => {
-    const orderTotal = order?.items?.reduce(
-      (a, v) => (a = a + v.price.offerPrice * v.count),
-      0
-    );
-    setOrderTotal(orderTotal);
-    if (orderTotal > 0) {
+    const total =
+      order?.items?.reduce(
+        (a, v) => (a = a + v.price.offerPrice * v.count),
+        0
+      ) + order?.deliveryFee;
+    if (total > 0) {
       setUpiLink(
         `upi://pay?pa=${encodeURIComponent(
-          "imitra1202@okhdfcbank"
-        )}&pn=${encodeURIComponent("SHIKRITI Group")}&am=${encodeURIComponent(
-          orderTotal
-        )}&cu=${encodeURIComponent("INR")}&tn=${encodeURIComponent(
-          order?.orderNo
-        )}`
+          contacts.upiId
+        )}&pn=${encodeURIComponent(contacts.upiName)}&am=${encodeURIComponent(
+          total
+        )}&cu=${encodeURIComponent(
+          contacts.upiCurrency
+        )}&tn=${encodeURIComponent(order?.orderNo)}`
       );
     } else {
       setUpiLink("");
     }
-  }, [order]);
+  }, [order, contacts]);
+
+  useEffect(() => {
+    loadLookups();
+  }, []);
+
+  const loadLookups = async () => {
+    const resContact = await axios.get(API.BASE + API.CONTACTS);
+    setContacts(resContact.data);
+  };
 
   return (
     <Dialog onClose={handleClose} open={open} maxWidth="lg" fullWidth>
       <DialogTitle>
-        <div
-          style={{
+        <Box
+          sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
@@ -71,216 +81,280 @@ const OrderDetails = ({
           >
             <CloseIcon />
           </IconButton>
-        </div>
+        </Box>
       </DialogTitle>
       <DialogContent dividers sx={{ padding: 1 }}>
-        {" "}
-        <Typography variant="h5" sx={{ padding: "10px 0" }}>
-          {t("cart.total")}: ₹ {displayNo(orderTotal?.toFixed(2))}
-        </Typography>
-        <Box sx={{ padding: 0 }}>
-          <Grid container sx={{ padding: 0 }}>
-            <Grid size={{ md: 6 }} sx={{ padding: 1 }}>
-              <Grid
-                size={{ xs: 12 }}
-                sx={{ padding: "5px", border: "1px solid #80787869" }}
+        {order && (
+          <Box>
+            <Grid container sx={{ alignItems: "center" }}>
+              <Typography
+                variant="h5"
+                sx={{ padding: "10px 20px 10px 0", fontWeight: "bold" }}
               >
-                {order?.items
-                  ?.sort((a, b) => a.order - b.order)
-                  .map((item, index) => {
-                    return (
-                      <Grid container key={"details_item_" + index}>
-                        <Grid
-                          size={{ md: 12, xs: 12 }}
-                          container
-                          sx={{
-                            padding: "2px",
-                            borderBottom: 1,
-                            borderColor: "#9494943d",
-                          }}
-                        >
-                          <Grid
-                            size={{ md: 2, xs: 4 }}
-                            sx={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignSelf: "center",
-                            }}
-                          >
-                            <Link
-                              to={
-                                "/" +
-                                ROUTE_PATH.PRODUCT_DETAILS +
-                                "/" +
-                                item.id +
-                                "/" +
-                                item.type
-                              }
-                              style={{ textAlign: "center" }}
-                            >
-                              <img
-                                src={item.thumbnail}
-                                alt={item.thumbnail}
-                                className="cart-img"
-                              ></img>
-                            </Link>
-                          </Grid>
-                          <Grid size={{ md: 10, xs: 8 }} container>
+                {t("cart.total")}: ₹{" "}
+                {displayNo(
+                  (
+                    order?.items?.reduce(
+                      (a, v) => (a = a + v.price.offerPrice * v.count),
+                      0
+                    ) + order?.deliveryFee
+                  ).toFixed(2)
+                )}
+              </Typography>
+              <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+                {t("cart.delivery-fee")}: ₹{" "}
+                {displayNo(order?.deliveryFee?.toFixed(2))}
+              </Typography>
+              <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+                {t("cart.item-total")}: ₹{" "}
+                {displayNo(
+                  order?.items
+                    ?.reduce(
+                      (a, v) => (a = a + v.price.offerPrice * v.count),
+                      0
+                    )
+                    .toFixed(2)
+                )}
+              </Typography>
+            </Grid>
+            <Box sx={{ padding: 0 }}>
+              <Grid container sx={{ padding: 0 }}>
+                <Grid size={{ lg: 6 }} sx={{ padding: 1 }}>
+                  <Grid
+                    size={{ xs: 12 }}
+                    sx={{ padding: "5px", border: "1px solid #80787869" }}
+                  >
+                    {order?.items
+                      ?.sort((a, b) => a.order - b.order)
+                      .map((item, index) => {
+                        return (
+                          <Grid container key={"details_item_" + index}>
                             <Grid
-                              size={{ lg: 4 }}
-                              sx={{ padding: "5px", alignSelf: "center" }}
-                            >
-                              {item.name.find((n) => n.key === lan).value}
-                            </Grid>
-                            <Grid
-                              size={{ lg: 5 }}
-                              sx={{ padding: "5px", alignSelf: "center" }}
-                            >
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  fontWeight: "bold",
-                                  padding: "0 3px",
-                                  fontSize: "15px",
-                                }}
-                              >
-                                ₹
-                                {displayNo(
-                                  Number(item.price.offerPrice).toFixed(2)
-                                )}
-                              </Typography>
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  textDecoration: "line-through",
-                                  color: "#888888ff",
-                                }}
-                              >
-                                ₹
-                                {displayNo(
-                                  Number(item.price.actualPrice).toFixed(2)
-                                )}
-                              </Typography>
-                              <br />
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  fontWeight: "bold",
-                                  padding: "0 3px",
-                                  fontSize: "15px",
-                                }}
-                              >
-                                ₹
-                                {displayNo(
-                                  Number(
-                                    item.price.offerPrice * item.count
-                                  ).toFixed(2)
-                                )}
-                              </Typography>
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  textDecoration: "line-through",
-                                  color: "#888888ff",
-                                }}
-                              >
-                                ₹
-                                {displayNo(
-                                  Number(
-                                    item.price.actualPrice * item.count
-                                  ).toFixed(2)
-                                )}
-                              </Typography>
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  fontWeight: "bold",
-                                  padding: "0 3px",
-                                  color: "#28d311ff",
-                                }}
-                              >
-                                {displayNo(item.price.offer)}
-                                {t("off")}
-                              </Typography>
-                            </Grid>
-                            <Grid
-                              size={{ lg: 3 }}
+                              size={{ md: 12, xs: 12 }}
+                              container
                               sx={{
-                                padding: "5px",
-                                alignSelf: "center",
-                                display: "flex",
-                                justifySelf: "center",
-                                alignItems: "center",
+                                padding: "2px",
+                                borderBottom: 1,
+                                borderColor: "#9494943d",
                               }}
                             >
-                              <Button
+                              <Grid
+                                size={{ md: 2, xs: 4 }}
                                 sx={{
-                                  border: 1,
-                                  padding: "5px",
-                                  minWidth: "35px",
-                                  fontWeight: "bold",
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignSelf: "center",
                                 }}
-                                onClick={() => decreaseQuantity(item.id, order)}
                               >
-                                -
-                              </Button>
-                              <Typography
-                                sx={{ textAlign: "center", minWidth: "35px" }}
-                              >
-                                {displayNo(item.count.toString())}
-                              </Typography>
-                              <Button
-                                sx={{
-                                  border: 1,
-                                  padding: "5px",
-                                  minWidth: "35px",
-                                  fontWeight: "bold",
-                                }}
-                                onClick={() => increaseQuantity(item.id, order)}
-                              >
-                                +
-                              </Button>
+                                <Link
+                                  to={
+                                    "/" +
+                                    ROUTE_PATH.PRODUCT_DETAILS +
+                                    "/" +
+                                    item.id +
+                                    "/" +
+                                    item.type
+                                  }
+                                  style={{ textAlign: "center" }}
+                                >
+                                  <img
+                                    src={item.thumbnail}
+                                    alt={item.thumbnail}
+                                    className="cart-img"
+                                  ></img>
+                                </Link>
+                              </Grid>
+                              <Grid size={{ md: 10, xs: 8 }} container>
+                                <Grid
+                                  size={{ lg: 4 }}
+                                  sx={{ padding: "5px", alignSelf: "center" }}
+                                >
+                                  {item.name.find((n) => n.key === lan).value}
+                                </Grid>
+                                <Grid
+                                  size={{ lg: 5 }}
+                                  sx={{ padding: "5px", alignSelf: "center" }}
+                                >
+                                  <Typography
+                                    variant="caption"
+                                    sx={{
+                                      fontWeight: "bold",
+                                      padding: "0 3px",
+                                      fontSize: "15px",
+                                    }}
+                                  >
+                                    ₹
+                                    {displayNo(
+                                      Number(item.price.offerPrice).toFixed(2)
+                                    )}
+                                  </Typography>
+                                  <Typography
+                                    variant="caption"
+                                    sx={{
+                                      textDecoration: "line-through",
+                                      color: "#888888ff",
+                                    }}
+                                  >
+                                    ₹
+                                    {displayNo(
+                                      Number(item.price.actualPrice).toFixed(2)
+                                    )}
+                                  </Typography>
+                                  <br />
+                                  <Typography
+                                    variant="caption"
+                                    sx={{
+                                      fontWeight: "bold",
+                                      padding: "0 3px",
+                                      fontSize: "15px",
+                                    }}
+                                  >
+                                    ₹
+                                    {displayNo(
+                                      Number(
+                                        item.price.offerPrice * item.count
+                                      ).toFixed(2)
+                                    )}
+                                  </Typography>
+                                  <Typography
+                                    variant="caption"
+                                    sx={{
+                                      textDecoration: "line-through",
+                                      color: "#888888ff",
+                                    }}
+                                  >
+                                    ₹
+                                    {displayNo(
+                                      Number(
+                                        item.price.actualPrice * item.count
+                                      ).toFixed(2)
+                                    )}
+                                  </Typography>
+                                  <Typography
+                                    variant="caption"
+                                    sx={{
+                                      fontWeight: "bold",
+                                      padding: "0 3px",
+                                      color: "#28d311ff",
+                                    }}
+                                  >
+                                    {displayNo(item.price.offer)}
+                                    {t("off")}
+                                  </Typography>
+                                </Grid>
+                                <Grid
+                                  size={{ lg: 3 }}
+                                  sx={{
+                                    padding: "5px",
+                                    alignSelf: "center",
+                                    display: "flex",
+                                    justifySelf: "center",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <Button
+                                    sx={{
+                                      border: 1,
+                                      padding: "5px",
+                                      minWidth: "35px",
+                                      fontWeight: "bold",
+                                    }}
+                                    onClick={() =>
+                                      decreaseQuantity(item.id, order)
+                                    }
+                                  >
+                                    -
+                                  </Button>
+                                  <Typography
+                                    sx={{
+                                      textAlign: "center",
+                                      minWidth: "35px",
+                                    }}
+                                  >
+                                    {displayNo(item.count.toString())}
+                                  </Typography>
+                                  <Button
+                                    sx={{
+                                      border: 1,
+                                      padding: "5px",
+                                      minWidth: "35px",
+                                      fontWeight: "bold",
+                                    }}
+                                    onClick={() =>
+                                      increaseQuantity(item.id, order)
+                                    }
+                                  >
+                                    +
+                                  </Button>
+                                </Grid>
+                              </Grid>
                             </Grid>
                           </Grid>
-                        </Grid>
-                      </Grid>
-                    );
-                  })}
+                        );
+                      })}
+                  </Grid>
+                </Grid>
+                <Grid size={{ lg: 2 }} sx={{ padding: 1 }}>
+                  <Grid
+                    size={{ xs: 12 }}
+                    sx={{ padding: "5px", border: "1px solid #80787869" }}
+                  >
+                    <Box
+                      style={{
+                        background: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        padding: "5px",
+                      }}
+                    >
+                      {upiLink && (
+                        <QRCode
+                          value={upiLink}
+                          size={150}
+                          viewBox={`0 0 150 150`}
+                        />
+                      )}
+                    </Box>
+                    <Box style={{ textAlign: "center" }}>
+                      <Box>{t("order-details.payment.text")}</Box>
+                      <img
+                        src="./images/Gpay.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/Paytm.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/PhonePe.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                      <img
+                        src="./images/UPI.svg"
+                        alt="gpay"
+                        height="15px"
+                        style={{ padding: "2px" }}
+                      />
+                    </Box>
+                  </Grid>
+                </Grid>
+                <Grid size={{ lg: 4 }} sx={{ padding: 1 }}>
+                  <Grid
+                    size={{ xs: 12 }}
+                    sx={{ padding: "5px", border: "1px solid #80787869" }}
+                  ></Grid>
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid size={{ md: 2 }} sx={{ padding: 1 }}>
-              <Grid
-                size={{ xs: 12 }}
-                sx={{ padding: "5px", border: "1px solid #80787869" }}
-              >
-                <div
-                  style={{
-                    background: "white",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "10px",
-                  }}
-                >
-                  {upiLink && (
-                    <QRCode
-                      value={upiLink}
-                      size={150}
-                      viewBox={`0 0 150 150`}
-                    />
-                  )}
-                </div>
-                <div>Scan the code using Google Pay, PhonePe, or Paytm</div>
-              </Grid>
-            </Grid>
-            <Grid size={{ md: 3 }} sx={{ padding: 1 }}>
-              <Grid
-                size={{ xs: 12 }}
-                sx={{ padding: "5px", border: "1px solid #80787869" }}
-              ></Grid>
-            </Grid>
-          </Grid>
-        </Box>
+            </Box>
+          </Box>
+        )}
       </DialogContent>
     </Dialog>
   );

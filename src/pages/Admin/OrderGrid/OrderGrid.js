@@ -13,6 +13,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
   const [incenses, setIncenses] = useState();
   const [spices, setSpices] = useState();
   const [errorMessage, setErrorMessage] = useState("");
+  const [contacts, setContacts] = useState();
 
   const hideInMobile = {
     [theme.breakpoints.up("xs")]: {
@@ -39,9 +40,11 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
   const loadLookups = async () => {
     const incensesRes = await axios.get(API.BASE + API.INCENSES);
     const spicesRes = await axios.get(API.BASE + API.SPICES);
+    const resContact = await axios.get(API.BASE + API.CONTACTS);
 
     setIncenses(incensesRes.data);
     setSpices(spicesRes.data);
+    setContacts(resContact.data);
   };
 
   const addNewOrder = (orderText) => {
@@ -86,6 +89,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
           items,
           ...{ orderNo: Date.now() },
           order: orders.length + 1,
+          deliveryFee: contacts.deliveryFee
         };
 
         setOrders([newOrder, ...orders]);
@@ -181,7 +185,9 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
                   ₹
                   {displayNo(
                     order?.items
-                      ?.map((item) => Number(item.price.offerPrice))
+                      ?.map((item) =>
+                        Number(item.price.offerPrice * item.count)
+                      )
                       .reduce(
                         (accumulator, currentValue) =>
                           accumulator + currentValue,
