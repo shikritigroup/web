@@ -83,14 +83,34 @@ export default function Checkout() {
       incenses?.length > 0 &&
       spices?.length > 0 ? (
         <Box>
-          <Typography variant="h5" sx={{ padding: "10px 0" }}>
-            {t("cart.total")}: ₹{" "}
-            {displayNo(
-              myOrder.items
-                .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
-                .toFixed(2)
-            )}
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography
+              variant="h5"
+              sx={{ padding: "10px 20px 10px 0", fontWeight: "bold" }}
+            >
+              {t("cart.total")}: ₹{" "}
+              {displayNo(
+                (
+                  myOrder.items.reduce(
+                    (a, v) => (a = a + v.offerPrice * v.count),
+                    0
+                  ) + myOrder.deliveryFee
+                ).toFixed(2)
+              )}
+            </Typography>
+            <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+              {t("cart.delivery-fee")}: ₹{" "}
+              {displayNo(myOrder.deliveryFee.toFixed(2))}
+            </Typography>
+            <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+              {t("cart.item-total")}: ₹{" "}
+              {displayNo(
+                myOrder.items
+                  .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
+                  .toFixed(2)
+              )}
+            </Typography>
+          </Box>
           <Box sx={{ padding: "10px" }}>
             <Grid container>
               <Grid
@@ -299,7 +319,7 @@ export default function Checkout() {
               <Trans
                 i18nKey="cart.desktop.order.instruction"
                 components={{
-                  WhatsAppNo: <span>{displayNo(contacts?.b2b)}</span>,
+                  WhatsAppNo: <span>{displayNo(contacts?.orderNo)}</span>,
                 }}
               ></Trans>
             </Box>

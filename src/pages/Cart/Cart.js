@@ -27,6 +27,7 @@ export default function Cart() {
   const [myOrder, setMyOrder] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
+  const [contacts, setContacts] = useState();
 
   const [fullName, setFullName] = useState(userAddress?.n);
   const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
@@ -55,18 +56,20 @@ export default function Cart() {
   const loadLookups = async () => {
     const incensesRes = await axios.get(API.BASE + API.INCENSES);
     const spicesRes = await axios.get(API.BASE + API.SPICES);
+    const resContact = await axios.get(API.BASE + API.CONTACTS);
 
     setIncenses(incensesRes.data);
     setSpices(spicesRes.data);
+    setContacts(resContact?.data);
   };
 
   const increaseQuantity = (id, type) => {
-    addToCart(id, type);
+    addToCart(id, type, contacts.deliveryFee);
     setMyOrder(getCart());
   };
 
   const decreaseQuantity = (id, type) => {
-    removeFromCart(id, type);
+    removeFromCart(id, type, contacts.deliveryFee);
     setMyOrder(getCart());
   };
 
@@ -83,11 +86,38 @@ export default function Cart() {
       >
         {t("cart.header")}
       </Typography>
-      {myOrder?.items?.length > 0 && incenses?.length > 0 && spices?.length > 0 ? (
+      {myOrder?.items?.length > 0 &&
+      incenses?.length > 0 &&
+      spices?.length > 0 ? (
         <Box>
-          <Typography variant="h5" sx={{ padding: "10px 0" }}>
-            {t("cart.total")}: ₹ {displayNo(myOrder.items.reduce((a,v) =>  a = a + (v.offerPrice * v.count) , 0 ).toFixed(2))}
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography
+              variant="h5"
+              sx={{ padding: "10px 20px 10px 0", fontWeight: "bold" }}
+            >
+              {t("cart.total")}: ₹{" "}
+              {displayNo(
+                (
+                  myOrder.items.reduce(
+                    (a, v) => (a = a + v.offerPrice * v.count),
+                    0
+                  ) + myOrder.deliveryFee
+                ).toFixed(2)
+              )}
+            </Typography>
+            <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+              {t("cart.delivery-fee")}: ₹{" "}
+              {displayNo(myOrder?.deliveryFee?.toFixed(2))}
+            </Typography>
+            <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
+              {t("cart.item-total")}: ₹{" "}
+              {displayNo(
+                myOrder.items
+                  .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
+                  .toFixed(2)
+              )}
+            </Typography>
+          </Box>
           <Box sx={{ padding: "10px" }}>
             <Grid container>
               <Grid

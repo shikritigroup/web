@@ -12,6 +12,7 @@ import { displayNo } from "../../helper/Number";
 export default function ProductDetails() {
   const [t] = useTranslation();
   const [product, setProduct] = useState();
+  const [contacts, setContacts] = useState();
   const { id } = useParams();
   const { type } = useParams();
   const lan = localStorage.getItem("userLanguage");
@@ -25,17 +26,20 @@ export default function ProductDetails() {
   }, [id, type]);
 
   const loadLookups = async (id, type) => {
-    const res = await axios.get(
+    const resContact = await axios.get(API.BASE + API.CONTACTS);
+    setContacts(resContact?.data);
+    
+    const resProducts = await axios.get(
       API.BASE + (type === ROUTE_PATH.INCENSES ? API.INCENSES : API.SPICES)
     );
-    const products = res?.data?.filter((p) => p.id === id);
+    const products = resProducts?.data?.filter((p) => p.id === id);
     if (products && products[0]) {
       setProduct(products[0]);
     }
   };
 
   const handelAddToCart = () => {
-    addToCart(id, type, product.price.offerPrice);
+    addToCart(id, type, product.price.offerPrice, contacts.deliveryFee);
     navigator("/" + ROUTE_PATH.CART);
   };
 
@@ -93,8 +97,8 @@ export default function ProductDetails() {
                 </Typography>
                 <ul>
                   {product?.details
-                    ?.find((n) => n.key === lan).value
-                    ?.split("\n ")
+                    ?.find((n) => n.key === lan)
+                    .value?.split("\n ")
                     .map((del, index) => (
                       <li key={"del_" + index}>{del}</li>
                     ))}
