@@ -57,7 +57,7 @@ export default function Checkout() {
       setOpen(true);
     } else {
       window.open(
-        ROUTE_PATH.WHATSAPP + contacts.b2b + "?text=" + order,
+        ROUTE_PATH.WHATSAPP + contacts.orderNo + "?text=" + order,
         "_blank"
       );
     }

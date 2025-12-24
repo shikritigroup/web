@@ -13,6 +13,8 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { ROUTE_PATH } from "../../../helper/Constants";
 import { displayNo } from "../../../helper/Number";
+import QRCode from "react-qr-code";
+import { useEffect, useState } from "react";
 
 const OrderDetails = ({
   open,
@@ -23,6 +25,29 @@ const OrderDetails = ({
 }) => {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
+  const [upiLink, setUpiLink] = useState();
+  const [orderTotal, setOrderTotal] = useState(0);
+
+  useEffect(() => {
+    const orderTotal = order?.items?.reduce(
+      (a, v) => (a = a + v.price.offerPrice * v.count),
+      0
+    );
+    setOrderTotal(orderTotal);
+    if (orderTotal > 0) {
+      setUpiLink(
+        `upi://pay?pa=${encodeURIComponent(
+          "imitra1202@okhdfcbank"
+        )}&pn=${encodeURIComponent("SHIKRITI Group")}&am=${encodeURIComponent(
+          orderTotal
+        )}&cu=${encodeURIComponent("INR")}&tn=${encodeURIComponent(
+          order?.orderNo
+        )}`
+      );
+    } else {
+      setUpiLink("");
+    }
+  }, [order]);
 
   return (
     <Dialog onClose={handleClose} open={open} maxWidth="lg" fullWidth>
@@ -51,12 +76,7 @@ const OrderDetails = ({
       <DialogContent dividers sx={{ padding: 1 }}>
         {" "}
         <Typography variant="h5" sx={{ padding: "10px 0" }}>
-          {t("cart.total")}: ₹{" "}
-          {displayNo(
-            order?.items
-              ?.reduce((a, v) => (a = a + v.price.offerPrice * v.count), 0)
-              .toFixed(2)
-          )}
+          {t("cart.total")}: ₹ {displayNo(orderTotal?.toFixed(2))}
         </Typography>
         <Box sx={{ padding: 0 }}>
           <Grid container sx={{ padding: 0 }}>
@@ -228,11 +248,30 @@ const OrderDetails = ({
                   })}
               </Grid>
             </Grid>
-            <Grid size={{ md: 3 }} sx={{ padding: 1 }}>
+            <Grid size={{ md: 2 }} sx={{ padding: 1 }}>
               <Grid
                 size={{ xs: 12 }}
                 sx={{ padding: "5px", border: "1px solid #80787869" }}
-              ></Grid>
+              >
+                <div
+                  style={{
+                    background: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px",
+                  }}
+                >
+                  {upiLink && (
+                    <QRCode
+                      value={upiLink}
+                      size={150}
+                      viewBox={`0 0 150 150`}
+                    />
+                  )}
+                </div>
+                <div>Scan the code using Google Pay, PhonePe, or Paytm</div>
+              </Grid>
             </Grid>
             <Grid size={{ md: 3 }} sx={{ padding: 1 }}>
               <Grid

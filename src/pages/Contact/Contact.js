@@ -27,7 +27,12 @@ export default function Contact() {
   return (
     contacts && (
       <Box sx={{ padding: "10px" }}>
-        <h1>{t("contact.head")}</h1>
+        <h3>
+          <u>{t("contact.head")}</u>
+        </h3>
+        <h1>{t("contact.companyName")}</h1>
+        <h2>{t("contact.regNo")}: {t("contact.companyRegNo")}</h2>
+        <h3>{t("contact.companyAddress")}</h3>
         <Box>
           <Box sx={{ display: "inline-flex" }}>
             <CallIcon></CallIcon>
