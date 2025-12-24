@@ -58,6 +58,7 @@
     "admin.quant": "Quant",
     "admin.total": "Total",
     "admin.view": "View",
+    "admin.save": "Save",
     "order-details.head": "Order Details",
     "order-details.payment.text": "Scan the code using"
 }
