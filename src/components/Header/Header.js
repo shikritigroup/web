@@ -44,6 +44,7 @@ function Header() {
     localStorage.setItem("userLanguage", langauge);
     setLangauge(langauge);
     i18n.changeLanguage(langauge);
+    document.title = t("title");
   }, [langauge, i18n]);
 
   return (
@@ -110,10 +111,7 @@ function Header() {
                     onClick={handleCloseNavMenu}
                     sx={{ textAlign: "left" }}
                   >
-                    <Link
-                      to={page.path}
-                      className="menu-item"
-                    >
+                    <Link to={page.path} className="menu-item">
                       {t(page.text)}
                     </Link>
                   </MenuItem>
@@ -161,10 +159,7 @@ function Header() {
             </Box>
             <Box>
               <Tooltip title={t("cart.header")}>
-                <Link
-                  to={ROUTE_PATH.CART}
-                  className="cart-icon"
-                >
+                <Link to={ROUTE_PATH.CART} className="cart-icon">
                   <ShoppingCartIcon
                     sx={{ my: 2, color: "black", display: "block" }}
                   ></ShoppingCartIcon>

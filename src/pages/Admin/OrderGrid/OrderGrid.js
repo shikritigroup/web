@@ -89,7 +89,7 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
           items,
           ...{ orderNo: Date.now() },
           order: orders.length + 1,
-          deliveryFee: contacts.deliveryFee
+          deliveryFee: contacts.deliveryFee,
         };
 
         setOrders([newOrder, ...orders]);
@@ -184,16 +184,17 @@ const OrderGrid = ({ handleOpen, orders, setOrders }) => {
                 >
                   ₹
                   {displayNo(
-                    order?.items
-                      ?.map((item) =>
-                        Number(item.price.offerPrice * item.count)
-                      )
-                      .reduce(
-                        (accumulator, currentValue) =>
-                          accumulator + currentValue,
-                        0
-                      )
-                      .toFixed(2)
+                    (
+                      order?.items
+                        ?.map((item) =>
+                          Number(item.price.offerPrice * item.count)
+                        )
+                        .reduce(
+                          (accumulator, currentValue) =>
+                            accumulator + currentValue,
+                          0
+                        ) + contacts.deliveryFee
+                    ).toFixed(2)
                   )}
                 </Typography>
               </Grid>

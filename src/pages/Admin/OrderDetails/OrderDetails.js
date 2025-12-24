@@ -86,7 +86,23 @@ const OrderDetails = ({
       <DialogContent dividers sx={{ padding: 1 }}>
         {order && (
           <Box>
-            <Grid container sx={{ alignItems: "center" }}>
+            <Grid container>
+              <Grid size={{ xs: 12, sm: "auto" }} sx={{ padding: "2px" }}>
+                <Button variant="contained">Mark as Paid</Button>
+              </Grid>
+              <Grid size={{ xs: 12, sm: "auto" }} sx={{ padding: "2px" }}>
+                <Button variant="contained">Delete</Button>
+              </Grid>
+              <Grid size={{ xs: 12, sm: "auto" }} sx={{ padding: "2px" }}>
+                <Button variant="contained">Print</Button>
+              </Grid>
+            </Grid>
+            <Box sx={{ padding: "5px" }}>
+              {t("admin.orderNo")}
+              {": "}
+              {displayNo(order?.orderNo)}
+            </Box>
+            <Grid container sx={{ alignItems: "center", padding: "5px" }}>
               <Typography
                 variant="h5"
                 sx={{ padding: "10px 20px 10px 0", fontWeight: "bold" }}

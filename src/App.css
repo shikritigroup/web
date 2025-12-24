@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-.css-1cennmq-MuiBackdrop-root-MuiDialog-backdrop {
-  height: 100vh;
+.MuiModal-backdrop {
+  height: 100vh !important;
 }
 
 .MuiDialog-container {
