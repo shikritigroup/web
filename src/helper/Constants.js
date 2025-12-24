@@ -9,7 +9,7 @@ export const ROUTE_PATH = {
   INCENSES: "incenses",
   SPICES: "spices",
   B2B: "b2b",
-  PRODUCT_DETAILS: "product/Ddetails/",
+  PRODUCT_DETAILS: "product/details/",
   WHATSAPP: "https://wa.me/",
 };
 

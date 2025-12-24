@@ -291,7 +291,6 @@ const OrderDetails = ({
                                   to={
                                     "/" +
                                     ROUTE_PATH.PRODUCT_DETAILS +
-                                    "/" +
                                     item.id +
                                     "/" +
                                     item.type
