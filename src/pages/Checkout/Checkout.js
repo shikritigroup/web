@@ -11,7 +11,6 @@ import {
   useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { getCart } from "../../helper/OrderHelper";
 import { API, ROUTE_PATH } from "../../helper/Constants";
 import axios from "axios";
 import "./Checkout.css";
@@ -20,13 +19,13 @@ import { Trans, useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
 import CloseIcon from "@mui/icons-material/Close";
 import { encode } from "@toon-format/toon";
+import { useSelector } from "react-redux";
 
 export default function Checkout() {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
   const userAddress = JSON.parse(localStorage.getItem("userAddress"));
 
-  const [myOrder] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
   const [contacts, setContacts] = useState();
@@ -35,6 +34,8 @@ export default function Checkout() {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
+  const myOrder = useSelector((state) => state.cart.cart);
 
   const handleClose = () => {
     setOpen(false);

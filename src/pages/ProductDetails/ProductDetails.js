@@ -5,9 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import AppCarousel from "../../components/AppCarousel/AppCarousel";
 import { API, ROUTE_PATH } from "../../helper/Constants";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { addToCart } from "../../helper/OrderHelper";
 import { useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 
 export default function ProductDetails() {
   const [t] = useTranslation();
@@ -16,6 +17,7 @@ export default function ProductDetails() {
   const { id } = useParams();
   const { type } = useParams();
   const lan = localStorage.getItem("userLanguage");
+  const dispatch = useDispatch();
 
   const navigator = useNavigate();
 
@@ -28,9 +30,9 @@ export default function ProductDetails() {
   const loadLookups = async (id, type) => {
     const resContact = await axios.get(API.BASE + API.CONTACTS);
     setContacts(resContact?.data);
-    
+
     const resProducts = await axios.get(
-      API.BASE + (type === ROUTE_PATH.INCENSES ? API.INCENSES : API.SPICES)
+      API.BASE + (type === ROUTE_PATH.INCENSES ? API.INCENSES : API.SPICES),
     );
     const products = resProducts?.data?.filter((p) => p.id === id);
     if (products && products[0]) {
@@ -39,7 +41,17 @@ export default function ProductDetails() {
   };
 
   const handelAddToCart = () => {
-    addToCart(id, type, product.price.offerPrice, contacts.deliveryFee);
+    dispatch(
+      addToCart(
+        {
+          itemId: id,
+          type,
+          offerPrice: product.price.offerPrice,
+          deliveryFee: contacts.deliveryFee,
+        },
+        "addToCart",
+      ),
+    );
     navigator("/" + ROUTE_PATH.CART);
   };
 

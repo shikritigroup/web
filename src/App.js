@@ -17,6 +17,9 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import { ROUTE_PATH } from "./helper/Constants";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Admin from "./pages/Admin/Admin";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadCart } from "./redux/cartSlice";
 
 const appTheme = createTheme({
   palette: {
@@ -28,6 +31,12 @@ const appTheme = createTheme({
 });
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadCart());
+  }, []);
+
   return (
     <div className="App">
       <ThemeProvider theme={appTheme}>
@@ -37,38 +46,14 @@ function App() {
         <div className="app-container">
           <Routes>
             <Route path={ROUTE_PATH.BASE} element={<Home />} />
-            <Route
-              path={ROUTE_PATH.ABOUT}
-              element={<About />}
-            />
-            <Route
-              path={ROUTE_PATH.CONTACT}
-              element={<Contact />}
-            />
-            <Route
-              path={ROUTE_PATH.CART}
-              element={<Cart />}
-            />
-            <Route
-              path={ROUTE_PATH.CHECKOUT}
-              element={<Checkout />}
-            />
-            <Route
-              path={ROUTE_PATH.TERMS}
-              element={<Terms />}
-            />
-            <Route
-              path={ROUTE_PATH.ADMIN}
-              element={<Admin />}
-            />
-            <Route
-              path={ROUTE_PATH.INCENSES}
-              element={<Incenses />}
-            />
-            <Route
-              path={ROUTE_PATH.SPICES}
-              element={<Spices />}
-            />
+            <Route path={ROUTE_PATH.ABOUT} element={<About />} />
+            <Route path={ROUTE_PATH.CONTACT} element={<Contact />} />
+            <Route path={ROUTE_PATH.CART} element={<Cart />} />
+            <Route path={ROUTE_PATH.CHECKOUT} element={<Checkout />} />
+            <Route path={ROUTE_PATH.TERMS} element={<Terms />} />
+            <Route path={ROUTE_PATH.ADMIN} element={<Admin />} />
+            <Route path={ROUTE_PATH.INCENSES} element={<Incenses />} />
+            <Route path={ROUTE_PATH.SPICES} element={<Spices />} />
             <Route path={ROUTE_PATH.B2B} element={<B2B />} />
             <Route
               path={ROUTE_PATH.PRODUCT_DETAILS + ":id/:type"}

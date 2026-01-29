@@ -9,13 +9,14 @@ import {
   Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { addToCart, getCart, removeFromCart } from "../../helper/OrderHelper";
 import { API, ROUTE_PATH } from "../../helper/Constants";
 import axios from "axios";
 import "./Cart.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { displayNo } from "../../helper/Number";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../../redux/cartSlice";
 
 export default function Cart() {
   const [t] = useTranslation();
@@ -24,7 +25,6 @@ export default function Cart() {
 
   const navigate = useNavigate();
 
-  const [myOrder, setMyOrder] = useState(getCart());
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
   const [contacts, setContacts] = useState();
@@ -33,6 +33,9 @@ export default function Cart() {
   const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
   const [address, setAddress] = useState(userAddress?.a);
 
+  const myOrder = useSelector((state) => state.cart.cart);
+  const dispatch = useDispatch();
+
   const handleSubmit = () => {
     localStorage.setItem(
       "userAddress",
@@ -40,7 +43,7 @@ export default function Cart() {
         n: fullName,
         pn: phoneNumber,
         a: address,
-      })
+      }),
     );
     navigate("/" + ROUTE_PATH.CHECKOUT);
   };
@@ -60,13 +63,21 @@ export default function Cart() {
   };
 
   const increaseQuantity = (id, type) => {
-    addToCart(id, type, contacts.deliveryFee);
-    setMyOrder(getCart());
+    dispatch(
+      addToCart(
+        { itemId: id, type, deliveryFee: contacts.deliveryFee },
+        "addToCart",
+      ),
+    );
   };
 
   const decreaseQuantity = (id, type) => {
-    removeFromCart(id, type, contacts.deliveryFee);
-    setMyOrder(getCart());
+    dispatch(
+      removeFromCart(
+        { itemId: id, type, deliveryFee: contacts.deliveryFee },
+        "removeFromCart",
+      ),
+    );
   };
 
   return (
@@ -96,9 +107,9 @@ export default function Cart() {
                 (
                   myOrder.items.reduce(
                     (a, v) => (a = a + v.offerPrice * v.count),
-                    0
+                    0,
                   ) + myOrder.deliveryFee
-                ).toFixed(2)
+                ).toFixed(2),
               )}
             </Typography>
             <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
@@ -110,7 +121,7 @@ export default function Cart() {
               {displayNo(
                 myOrder.items
                   .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
-                  .toFixed(2)
+                  .toFixed(2),
               )}
             </Typography>
           </Grid>
@@ -169,13 +180,13 @@ export default function Cart() {
                 size={{ md: 8, xs: 12 }}
                 sx={{ padding: "10px 20px", border: "1px solid #80787869" }}
               >
-                {myOrder.items
+                {[...myOrder.items]
                   ?.sort((a, b) => a.order - b.order)
                   .map((item, index) => {
                     let product =
                       item.type === ROUTE_PATH.INCENSES
                         ? incenses.filter(
-                            (incense) => incense.id === item.id
+                            (incense) => incense.id === item.id,
                           )[0]
                         : spices.filter((spice) => spice.id === item.id)[0];
 
@@ -239,8 +250,8 @@ export default function Cart() {
                                 ₹
                                 {displayNo(
                                   Number(
-                                    product.price.offerPrice * item.count
-                                  ).toFixed(2)
+                                    product.price.offerPrice * item.count,
+                                  ).toFixed(2),
                                 )}
                               </Typography>
                               <Typography
@@ -253,8 +264,8 @@ export default function Cart() {
                                 ₹
                                 {displayNo(
                                   Number(
-                                    product.price.actualPrice * item.count
-                                  ).toFixed(2)
+                                    product.price.actualPrice * item.count,
+                                  ).toFixed(2),
                                 )}
                               </Typography>
                               <Typography

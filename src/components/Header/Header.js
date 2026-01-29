@@ -29,7 +29,7 @@ function Header() {
   const { t, i18n } = useTranslation();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [langauge, setLangauge] = useState(
-    localStorage.getItem("userLanguage") ?? "en"
+    localStorage.getItem("userLanguage") ?? "en",
   );
 
   const handleOpenNavMenu = (event) => {
@@ -42,12 +42,12 @@ function Header() {
 
   useEffect(() => {
     localStorage.setItem("userLanguage", langauge);
-    i18n.changeLanguage(langauge); 
-  }, [langauge]);
+    i18n.changeLanguage(langauge);
+  }, [langauge, i18n]);
 
   useEffect(() => {
     document.title = t("title");
-  }, [i18n.language]);
+  }, [i18n.language, t]);
 
   return (
     <Slide
