@@ -79,7 +79,7 @@ export default function Contact() {
                       to={
                         ROUTE_PATH.WHATSAPP +
                         +whatsApp.replace(/\s/g, "") +
-                        "?text=https://shikritigroup.github.io/web/"
+                        "?text=https://shikritigroup.github.io/"
                       }
                       about="_blank"
                     >

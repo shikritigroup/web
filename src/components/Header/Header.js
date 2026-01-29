@@ -42,10 +42,12 @@ function Header() {
 
   useEffect(() => {
     localStorage.setItem("userLanguage", langauge);
-    setLangauge(langauge);
-    i18n.changeLanguage(langauge);
-    document.title = t("title");
+    i18n.changeLanguage(langauge); 
   }, [langauge]);
+
+  useEffect(() => {
+    document.title = t("title");
+  }, [i18n.language]);
 
   return (
     <Slide
@@ -120,7 +122,7 @@ function Header() {
             </Box>
             <Box sx={{ flexGrow: { xs: 7, md: "revert", width: "60px" } }}>
               <Link to={ROUTE_PATH.BASE} className="menu-title">
-                <img alt="logo" src="/web/images/logo.png"></img>
+                <img alt="logo" src="/images/logo.png"></img>
               </Link>
             </Box>
             <Box

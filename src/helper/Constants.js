@@ -14,7 +14,7 @@ export const ROUTE_PATH = {
 };
 
 export const API = {
-  BASE: "/web",
+  BASE: "",
   HOME_LOOKUPS: "/lookups/home-lookups.json",
   CONTACTS: "/lookups/contacts.json",
   INCENSES: "/lookups/incenses.json",
