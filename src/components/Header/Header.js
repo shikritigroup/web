@@ -15,6 +15,7 @@ import { ROUTE_PATH } from "../../helper/Constants";
 import { FormControl, InputLabel, Select } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const pages = [
   { text: "menu.incenses", path: ROUTE_PATH.INCENSES },
@@ -31,6 +32,7 @@ function Header() {
   const [langauge, setLangauge] = useState(
     localStorage.getItem("userLanguage") ?? "en",
   );
+  const myOrder = useSelector((state) => state.cart.cart);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -162,6 +164,7 @@ function Header() {
             <Box>
               <Tooltip title={t("cart.header")}>
                 <Link to={ROUTE_PATH.CART} className="cart-icon">
+                  <div className="cart-count">{myOrder?.items?.length}</div>
                   <ShoppingCartIcon
                     sx={{ my: 2, color: "black", display: "block" }}
                   ></ShoppingCartIcon>

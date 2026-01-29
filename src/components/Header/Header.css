@@ -1,42 +1,51 @@
 .nav-bar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: inherit;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: inherit;
 }
 
 .menu-item-container {
-    justify-content: center;
+  justify-content: center;
 }
 
 .menu-item {
-    width: 100px;
-    height: 25px;
-    font-size: 18px;
-    font-family: 'monospace';
-    font-weight: 500;
-    color: inherit;
-    text-decoration: none;
-    transform: scale(1.1);
-    text-align: center;
+  width: 100px;
+  height: 25px;
+  font-size: 18px;
+  font-family: "monospace";
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  transform: scale(1.1);
+  text-align: center;
 }
 
 .menu-item:hover {
-    font-size: 20px;
-    font-weight: 800;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .menu-title img {
-    padding-top: 10px;
-    height: 60px;
+  padding-top: 10px;
+  height: 60px;
 }
 
 .cart-icon {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 5px 11px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 5px 11px;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  top: 7px;
 }
 
 .MuiSelect-select {
-    padding: 5px 32px 5px 5px !important;
+  padding: 5px 32px 5px 5px !important;
 }

@@ -32,6 +32,14 @@
     display: flex;
 }
 
+@media (max-width: 800px) {
+  .btn-explore {
+    left: auto;
+    right: 5%;
+    width: 90%;
+  }
+}
+
 .details-texts {
     position: absolute;
     top: 20px;
