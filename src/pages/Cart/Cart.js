@@ -21,7 +21,10 @@ import { addToCart, removeFromCart } from "../../redux/cartSlice";
 export default function Cart() {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
-  const userAddress = JSON.parse(localStorage.getItem("userAddress"));
+  
+  const myOrder = useSelector((state) => state.cart.cart);
+  const userAddress = useSelector((state) => state.address.address);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -33,16 +36,15 @@ export default function Cart() {
   const [phoneNumber, setPhoneNumber] = useState(userAddress?.pn);
   const [address, setAddress] = useState(userAddress?.a);
 
-  const myOrder = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    localStorage.setItem(
-      "userAddress",
-      JSON.stringify({
-        n: fullName,
-        pn: phoneNumber,
-        a: address,
+    dispatch(
+      addAddress({
+        address: {
+          n: fullName,
+          pn: phoneNumber,
+          a: address,
+        },
       }),
     );
     navigate("/" + ROUTE_PATH.CHECKOUT);

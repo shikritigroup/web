@@ -24,7 +24,7 @@ import { useSelector } from "react-redux";
 export default function Checkout() {
   const [t] = useTranslation();
   const lan = localStorage.getItem("userLanguage");
-  const userAddress = JSON.parse(localStorage.getItem("userAddress"));
+  const userAddress = useSelector((state) => state.address.address);
 
   const [incenses, setIncenses] = useState([]);
   const [spices, setSpices] = useState([]);
@@ -57,7 +57,7 @@ export default function Checkout() {
     } else {
       window.open(
         ROUTE_PATH.WHATSAPP + contacts.orderNo + "?text=" + order,
-        "_blank"
+        "_blank",
       );
     }
   };
@@ -92,9 +92,9 @@ export default function Checkout() {
                 (
                   myOrder.items.reduce(
                     (a, v) => (a = a + v.offerPrice * v.count),
-                    0
+                    0,
                   ) + myOrder.deliveryFee
-                ).toFixed(2)
+                ).toFixed(2),
               )}
             </Typography>
             <Typography variant="span" sx={{ padding: "10px 20px 10px 0" }}>
@@ -106,7 +106,7 @@ export default function Checkout() {
               {displayNo(
                 myOrder.items
                   .reduce((a, v) => (a = a + v.offerPrice * v.count), 0)
-                  .toFixed(2)
+                  .toFixed(2),
               )}
             </Typography>
           </Grid>
@@ -143,7 +143,7 @@ export default function Checkout() {
                       let product =
                         item.type === ROUTE_PATH.INCENSES
                           ? incenses.filter(
-                              (incense) => incense.id === item.id
+                              (incense) => incense.id === item.id,
                             )[0]
                           : spices.filter((spice) => spice.id === item.id)[0];
 
@@ -206,8 +206,8 @@ export default function Checkout() {
                                   ₹
                                   {displayNo(
                                     Number(
-                                      product.price.offerPrice * item.count
-                                    ).toFixed(2)
+                                      product.price.offerPrice * item.count,
+                                    ).toFixed(2),
                                   )}
                                 </Typography>
                                 <Typography
@@ -220,8 +220,8 @@ export default function Checkout() {
                                   ₹
                                   {displayNo(
                                     Number(
-                                      product.price.actualPrice * item.count
-                                    ).toFixed(2)
+                                      product.price.actualPrice * item.count,
+                                    ).toFixed(2),
                                   )}
                                 </Typography>
                                 <Typography
